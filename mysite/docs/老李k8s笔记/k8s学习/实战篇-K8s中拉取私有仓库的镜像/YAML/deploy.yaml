@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+  namespace: default
+  labels:
+    app: alpine
+spec:
+  selector:
+    matchLabels:
+      app: alpine
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpine
+    spec:
+      imagePullSecrets:
+        - name: laoli-registry-auth         
+      containers:
+        - name: container-alpine
+          image: 192.168.1.52:81/alpine:3.7
+          command: ["bin/sh","-c","sleep 3600"]

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy126
+  namespace: canary
+  labels:
+    app: nginx126
+spec:
+  selector:
+    matchLabels:
+      app: nginx126
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx126
+    spec:
+      containers:
+        - name: container-nginx126
+          image: mynginx:1.26.2
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service126
+  namespace: canary
+spec:
+  selector:
+    app: nginx126
+  ports:
+    - port: 80
+      targetPort: 80
+  

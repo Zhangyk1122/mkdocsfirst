@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: container-nginx
+          image: nginx:1.26.2
+          ports:
+            - containerPort: 80
+          envFrom:                  
+            - configMapRef:            
+                name: timezone		  

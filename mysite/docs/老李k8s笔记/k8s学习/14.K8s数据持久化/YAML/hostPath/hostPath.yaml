@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-nginx
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: vol-hostpath   
+          hostPath: 		  
+            path: /root/nginx   
+            type: DirectoryOrCreate  
+      containers:	
+        - name: container-nginx
+          image: nginx:1.26.2
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: vol-hostpath
+              mountPath: /usr/share/nginx/html

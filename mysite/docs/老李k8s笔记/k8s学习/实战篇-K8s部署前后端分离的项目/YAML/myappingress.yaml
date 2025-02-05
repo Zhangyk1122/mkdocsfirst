@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  namespace: myapp
+spec:
+  ingressClassName: nginx
+  # 1.路由规则
+  rules:
+      # 2.自定义域名
+    - host: www.myapp.com
+      http:
+        # 3.域名下的具体路径
+        paths:
+          - path: / 
+            backend:
+              service:              
+                # 前端service名字
+                name: myappfrontend-service
+                # 前端service端口
+                port: 
+                  number: 80
+            # 路径匹配类型      
+            pathType: Prefix

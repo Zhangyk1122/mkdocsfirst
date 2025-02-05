@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-nginx
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: vol-emptydir   
+          emptyDir: 		   
+            sizeLimit: 200Mi   
+      containers:	
+        - name: container-alpine
+          image: alpine:3.7
+          command: ["bin/sh","-c","sleep 3600"]
+          volumeMounts:
+            - name: vol-emptydir
+              mountPath: /home
+        - name: container-nginx
+          image: nginx:1.26.2
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: vol-emptydir
+              mountPath: /usr/share/nginx/html

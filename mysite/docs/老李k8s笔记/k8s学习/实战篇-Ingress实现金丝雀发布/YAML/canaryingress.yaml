@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+  namespace: canary
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: www.nginx.com
+      http:
+        paths:
+          - path: /
+            backend:
+              service:        
+                name: nginx-service124
+                port: 
+                  number: 80
+            pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress-canary
+  namespace: canary
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: www.nginx.com
+      http:
+        paths:
+          - path: /
+            backend:
+              service:        
+                name: nginx-service126
+                port: 
+                  number: 80
+            pathType: Prefix
