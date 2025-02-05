@@ -1,0 +1,125 @@
+site_name: My Docs
+nav:
+  - 首页:
+    - 首页:  index.md 
+    - 小资料: 资料/阿里云yum源.md
+  - 私有云:
+    - OpenStack云计算实战-综合实训: 资料/openstack.md
+    - openstack基础命令: /openstack/Openstack运维.html
+    - openstack-heat : ./openstack/heat模板.md
+  - 容器云:
+    - docker: 
+        - docker加速地址 : 资料/docker 镜像加速地址.md
+        - B站一小时精讲: https://www.yuque.com/wukong-zorrm/xwas40/
+    - k8s(前期自学):
+      - K8s介绍: 资料/K8s介绍.md
+      - ansible搭建k8s: 资料/ansible部署1.28.2集群(Containerd).md
+      - B站一小时精讲: https://www.yuque.com/wukong-zorrm/qdoy5p
+    - 老李k8s(系统学习):
+       - 01.开篇: 老李k8s笔记/k8s学习/01.开篇/笔记/Kubernetes - 01.md
+       - 02.搭建: 老李k8s笔记/k8s搭建/02.K8s环境搭建/笔记/Kubernetes - 02.md
+       - 03.k8s管理利器: 老李k8s笔记/k8s学习/03.K8s管理利器/笔记/Kubernetes - 03.md
+       - 04.Kubesphere应用商店: 老李k8s笔记/k8s学习/04.Kubesphere应用商店/笔记\Kubernetes - 04.md
+       - 05.Kubectl 命令指南: 老李k8s笔记/k8s学习/05.Kubectl 命令指南/笔记/Kubernetes - 05.md
+       - 06.K8s中的Yaml文件: 老李k8s笔记/k8s学习/06.K8s中的Yaml文件/Kubernetes - 06.md
+       - 07.K8s的命名空间: 老李k8s笔记/k8s学习/07.K8s的命名空间/Kubernetes - 07.md
+       - 08.K8s的资源配额与限制: 老李k8s笔记/k8s学习/08.K8s的资源配额与限制/笔记\Kubernetes - 08.md
+       - 09.K8s的Pod: 老李k8s笔记/k8s学习/09.K8s的Pod/笔记/Kubernetes - 09.md
+       - 10.节点污点和容忍: 老李k8s笔记/k8s学习/10.节点污点和容忍/笔记/Kubernetes - 10.md
+       - 11.K8s的Label:  老李k8s笔记/k8s学习/11.K8s的Label/笔记/Kubernetes - 11.md
+       - 12.K8s控制器: 老李k8s笔记/k8s学习/12.K8s控制器/笔记/Kubernetes - 12.md
+       - 13.K8s的Service: 老李k8s笔记/k8s学习/13.K8s的Service/笔记/Kubernetes - 13.md
+       - 14.K8s数据持久化: 老李k8s笔记/k8s学习/14.K8s数据持久化/笔记/Kubernetes - 14.md
+       - 15.ConfigMap与Secret: 老李k8s笔记/k8s学习/15.ConfigMap与Secret/笔记/Kubernetes - 15.md
+       - 16.Ingress: 老李k8s笔记/k8s学习/16.Ingress/笔记/Kubernetes - 16.md
+    - 老李实战篇:
+       - 实战篇-Ingress实现金丝雀发布: 老李k8s笔记/k8s学习/实战篇-Ingress实现金丝雀发布/笔记/实战篇-Ingress实现金丝雀发布.md
+       - 实战篇-K8s部署前后端分离的项目: 老李k8s笔记/k8s学习/实战篇-K8s部署前后端分离的项目/笔记/实战篇-K8s部署前后端分离的项目.md
+       - 实战篇-K8s中拉取私有仓库的镜像: 老李k8s笔记/k8s学习/实战篇-K8s中拉取私有仓库的镜像/笔记/实战篇-K8s拉取私有仓库的镜像.md
+  - 学习视频:
+    - video: 学习视频/video.md
+  - 监控:
+    - zabbix: 资料/rocky linux 部署zabbix.md
+  - 数据库:
+    - mysql8.0: 资料/mysql8.0 快速搭建.md
+  - shell: 资料/shell 学习.md
+  - python:
+    - openstack api:
+      - image: openstack api/create_image.md
+      - user: openstack api/create_user.md
+      - flavor: openstack api/create_flavor.md
+      - network: openstack api/create_network.md
+    - selenium:
+      - selenium历史学习记录: selenium/selenium历史学习记录.md
+      - 自动化文档: selenium/自动化.docx
+  - ansible: 
+    - ansible搭建: 资料/ansible.md 
+theme:
+  name: material
+  language: zh
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc
+  - pymdownx.emoji
+  - pymdownx.pathconverter
+
+repo_url: https://github.com/squidfunk/mkdocs-material
+repo_name: squidfunk/mkdocs-material
+
+extra:
+  404:
+    - 404.html
+  generator: false
+  social:
+    - icon: fontawesome/brands/mastodon 
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<2915597808@qq.com>
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/custom.js
+extra_css:
+  - stylesheets/custom.css
+  
+
+plugins:
+  - search
+  - encryptcontent
+
+
+
+copyright: Copyright &copy; 2016 - 2020 Martin Donath

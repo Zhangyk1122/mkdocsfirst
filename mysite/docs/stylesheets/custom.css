@@ -1,0 +1,48 @@
+/* docs/stylesheets/custom.css */
+
+#content-container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    height: 100vh; /* 让 div 占满整个视口高度 */
+    text-align: center; /* 文本居中 */
+  }
+  
+  #current-time {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3f51b5;
+    margin-bottom: 20px; /* 与下方内容的间距 */
+  }
+  
+  #text-container {
+    font-size: 1.2em; /* 调整字体大小 */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  @keyframes spreadOut {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+      letter-spacing: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(var(--offset));
+      letter-spacing: 0.2em; /* 调整字符间距 */
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(0);
+      letter-spacing: 0;
+    }
+  }
+  
+  .spread-out-text {
+    display: inline-block;
+    opacity: 0;
+    animation: spreadOut 6s ease-in-out infinite; /* 循环播放动画 */
+    animation-delay: var(--delay);
+  }
