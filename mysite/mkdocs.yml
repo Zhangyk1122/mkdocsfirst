@@ -6,7 +6,7 @@ nav:
   - 私有云:
     - OpenStack云计算实战-综合实训: 资料/openstack.md
     - openstack基础命令: /openstack/Openstack运维.html
-    - openstack-heat : ./openstack/heat模板.md
+    - openstack-heat: ./openstack/heat模板.md
   - 容器云:
     - docker: 
         - docker加速地址 : 资料/docker 镜像加速地址.md
