@@ -3,12 +3,17 @@ nav:
   - 首页:
     - 首页:  index.md 
     - 小资料: 资料/阿里云yum源.md
+  - ai:
+    - ai部署: 资料/ai.md
   - 私有云:
     - OpenStack云计算实战-综合实训: 资料/openstack.md
     - openstack基础命令: /openstack/Openstack运维.html
     - openstack-heat: ./openstack/heat模板.md
   - 容器云:
     - docker: 
+        - docker 项目: 
+            - Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS: ./资料/docker project/Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS.md
+            - 使用Docker部署Ward服务器监控工具: ./资料/docker project/使用Docker部署Ward服务器监控工具.md       
         - docker加速地址 : 资料/docker 镜像加速地址.md
         - B站一小时精讲: https://www.yuque.com/wukong-zorrm/xwas40/
     - k8s(前期自学):
@@ -30,7 +35,7 @@ nav:
        - 12.K8s控制器: 老李k8s笔记/k8s学习/12.K8s控制器/笔记/Kubernetes - 12.md
        - 13.K8s的Service: 老李k8s笔记/k8s学习/13.K8s的Service/笔记/Kubernetes - 13.md
        - 14.K8s数据持久化: 老李k8s笔记/k8s学习/14.K8s数据持久化/笔记/Kubernetes - 14.md
-       - 15.ConfigMap与Secret: 老李k8s笔记/k8s学习/15.ConfigMap与Secret/笔记/Kubernetes - 15.md
+       - 15.ConfigMap与Secret: 老李k8s笔记/k8s学习/15.ConfigMap与Secret/Kubernetes - 15.md
        - 16.Ingress: 老李k8s笔记/k8s学习/16.Ingress/笔记/Kubernetes - 16.md
     - 老李实战篇:
        - 实战篇-Ingress实现金丝雀发布: 老李k8s笔记/k8s学习/实战篇-Ingress实现金丝雀发布/笔记/实战篇-Ingress实现金丝雀发布.md
