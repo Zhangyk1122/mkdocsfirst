@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myappbackend-service
+  namespace: myapp
+spec:  
+  selector:
+    app: myappbackend
+  ports:
+    - port: 8899
+      targetPort: 8899
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myappbackend-dp
+  namespace: myapp
+  labels:
+    app: myappbackend
+spec:
+  selector:
+    matchLabels:
+      app: myappbackend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myappbackend
+    spec:
+      containers:
+        - name: container-myappbackend
+          image: myappbackend             #1. 使用自定义镜像myappbackend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8899         #2. 暴露后端应用端口8899

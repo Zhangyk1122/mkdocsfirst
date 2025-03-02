@@ -1,0 +1,2732 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../03.K8s%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2003/">
+      
+      
+        <link rel="next" href="../../../06.K8s%E4%B8%AD%E7%9A%84Yaml%E6%96%87%E4%BB%B6/Kubernetes%20-%2006/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.6">
+    
+    
+      
+        <title>My Secret Page - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubectl" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              My Secret Page
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../.." class="md-tabs__link">
+          
+  
+    
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E8%B5%84%E6%96%99/ai/" class="md-tabs__link">
+          
+  
+    
+  
+  ai
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E8%B5%84%E6%96%99/openstack/" class="md-tabs__link">
+          
+  
+    
+  
+  私有云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../../%E8%B5%84%E6%96%99/docker%20project/Docker%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ENextcloud%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E4%B8%AA%E4%BA%BA%E7%9B%B8%E5%86%8C%E5%AE%B6%E5%BA%ADNAS/" class="md-tabs__link">
+          
+  
+    
+  
+  容器云
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/video/" class="md-tabs__link">
+          
+  
+    
+  
+  学习视频
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E8%B5%84%E6%96%99/rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-tabs__link">
+          
+  
+    
+  
+  监控
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E8%B5%84%E6%96%99/mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
+          
+  
+    
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/shell%20%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+    
+  
+  shell
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../openstack%20api/create_image/" class="md-tabs__link">
+          
+  
+    
+  
+  python
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E8%B5%84%E6%96%99/ansible/" class="md-tabs__link">
+          
+  
+    
+  
+  ansible
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/%E9%98%BF%E9%87%8C%E4%BA%91yum%E6%BA%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小资料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ai部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    私有云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            私有云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/openstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenStack云计算实战-综合实训
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/openstack/Openstack运维.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openstack基础命令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack/heat%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openstack-heat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    容器云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            容器云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    docker
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    docker 项目
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker 项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/docker%20project/Docker%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ENextcloud%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E4%B8%AA%E4%BA%BA%E7%9B%B8%E5%86%8C%E5%AE%B6%E5%BA%ADNAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/docker%20project/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2Ward%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用Docker部署Ward服务器监控工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/docker%20%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E5%9C%B0%E5%9D%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker加速地址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.yuque.com/wukong-zorrm/xwas40/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B站一小时精讲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    k8s(前期自学)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            k8s(前期自学)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/K8s%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8s介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/ansible%E9%83%A8%E7%BD%B21.28.2%E9%9B%86%E7%BE%A4%28Containerd%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ansible搭建k8s
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.yuque.com/wukong-zorrm/qdoy5p" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B站一小时精讲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    老李k8s(系统学习)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            老李k8s(系统学习)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01.%E5%BC%80%E7%AF%87/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2001/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01.开篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s%E6%90%AD%E5%BB%BA/02.K8s%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2002/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02.搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03.K8s%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2003/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 03.k8s管理利器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../老李k8s笔记/k8s学习/04.Kubesphere应用商店/笔记/Kubernetes - 04.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04.Kubesphere应用商店
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    [Protected] 05.Kubectl 命令指南
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 05.Kubectl 命令指南
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 认识kubectl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 认识 kubernetes 资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 对资源的操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 对资源的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据具体的资源管理办法，对资源的操作又可以分：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 命令式管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 命令式管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 创建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 资源查看
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 容器管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 声明式管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06.K8s%E4%B8%AD%E7%9A%84Yaml%E6%96%87%E4%BB%B6/Kubernetes%20-%2006/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06.K8s中的Yaml文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07.K8s%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/Kubernetes%20-%2007/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07.K8s的命名空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../老李k8s笔记/k8s学习/08.K8s的资源配额与限制/笔记/Kubernetes - 08.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.K8s的资源配额与限制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../09.K8s%E7%9A%84Pod/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2009/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09.K8s的Pod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10.%E8%8A%82%E7%82%B9%E6%B1%A1%E7%82%B9%E5%92%8C%E5%AE%B9%E5%BF%8D/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.节点污点和容忍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11.K8s%E7%9A%84Label/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.K8s的Label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12.K8s%E6%8E%A7%E5%88%B6%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2012/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.K8s控制器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../13.K8s%E7%9A%84Service/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2013/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.K8s的Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../14.K8s%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2014/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.K8s数据持久化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../15.ConfigMap%E4%B8%8ESecret/Kubernetes%20-%2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.ConfigMap与Secret
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../16.Ingress/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.Ingress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    老李实战篇
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            老李实战篇
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实战篇-Ingress实现金丝雀发布
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实战篇-K8s部署前后端分离的项目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E4%B8%AD%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实战篇-K8s中拉取私有仓库的镜像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    学习视频
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            学习视频
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    video
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    监控
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            监控
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    zabbix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mysql8.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/shell%20%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    openstack api
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            openstack api
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    user
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_flavor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flavor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    selenium
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            selenium
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../selenium/selenium%E5%8E%86%E5%8F%B2%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    selenium历史学习记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../selenium/%E8%87%AA%E5%8A%A8%E5%8C%96.docx" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%B5%84%E6%96%99/ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ansible搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 认识kubectl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 认识 kubernetes 资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 对资源的操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 对资源的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据具体的资源管理办法，对资源的操作又可以分：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 命令式管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 命令式管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 创建
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 资源查看
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 容器管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 声明式管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div id="mkdocs-encrypted-content" style="display:none">KMdNHMZTWXbyQqm6Tw+U0Q==;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</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/05.Kubectl%20%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2005/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["ZY3NHGQCgvU0qrzV0MLgxw==;Flc6v9y2ageeBs7pOarmmP0WXs4Z7L333lM7cQlUqCnabs444I9Zf8DFJylvtJgeuZ+lZA5HfFaMhzX3dsddVIEU8Z1Ata0Fm/TQWMUSnX9sDczHm+IYZB217ugfM1Wb;mIJDmzjO3vPqQUqLnsD8/A=="];
+var encryptcontent_obfuscate = 0;
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/enc-base64.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/cipher-core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/sha256.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/hmac.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/pbkdf2.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/aes.js"></script>
+<script type="text/javascript" src="../../../../../assets/javascripts/decrypt-contents.js" defer></script>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2020 Martin Donath
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<2915597808@qq.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.code.select", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>

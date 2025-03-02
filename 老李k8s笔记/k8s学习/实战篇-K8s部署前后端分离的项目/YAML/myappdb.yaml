@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config  
+  namespace: myapp
+data:
+  charset.cnf: |
+    [mysql]
+    default-character-set=utf8mb4
+    [mysql.server]
+    default-character-set=utf8mb4
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myappdb-service
+  namespace: myapp
+spec:
+  clusterIP: None               # 1. "无头"服务类型
+  selector:
+    app: myappdb
+  ports:
+    - port: 3306
+      targetPort: 3306
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: myappdb-sts
+  namespace: myapp
+  labels:
+    app: myappdb
+spec:
+  serviceName: myappdb-service  # 2.使用前面的"无头"服务
+  selector:
+    matchLabels:
+      app: myappdb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myappdb
+    spec:
+      volumes:     				
+        - name: vol-nfs         
+          nfs:                   # 3.使用nfs
+            server: 192.168.1.88
+            path: /root/nfs/mysql
+        - name: config-mysql     # 4.使用configMap
+          configMap:
+            name: mysql-config
+      containers:
+        - name: container-myappdb
+          image: myappdb         # 5.使用自定义镜像myappdb
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: MYSQL_ROOT_PASSWORD
+              value: '123456'
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: vol-nfs
+              mountPath: /var/lib/mysql
+            - name: config-mysql
+              mountPath: /etc/mysql/conf.d
