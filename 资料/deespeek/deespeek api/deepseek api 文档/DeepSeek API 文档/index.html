@@ -1,0 +1,3919 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../../win%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E6%BF%80%E6%B4%BB/">
+      
+      
+        <link rel="next" href="../../../deespeek%20%E8%81%8C%E5%9C%BA%E8%B5%8B%E8%83%BD/DeepSeek%E5%A6%82%E4%BD%95%E8%B5%8B%E8%83%BD%E8%81%8C%E5%9C%BA%E5%BA%94%E7%94%A8/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>deespeek api - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deepseek-api" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              deespeek api
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../.." class="md-tabs__link">
+          
+  
+    
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  ai
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../openstack/" class="md-tabs__link">
+          
+  
+    
+  
+  私有云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../docker%20project/Docker%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ENextcloud%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E4%B8%AA%E4%BA%BA%E7%9B%B8%E5%86%8C%E5%AE%B6%E5%BA%ADNAS/" class="md-tabs__link">
+          
+  
+    
+  
+  容器云
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/video/" class="md-tabs__link">
+          
+  
+    
+  
+  学习视频
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-tabs__link">
+          
+  
+    
+  
+  监控
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
+          
+  
+    
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../shell%20%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+    
+  
+  shell
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../openstack%20api/create_image/" class="md-tabs__link">
+          
+  
+    
+  
+  python
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ansible/" class="md-tabs__link">
+          
+  
+    
+  
+  ansible
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    百宝箱
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            百宝箱
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E9%98%BF%E9%87%8C%E4%BA%91yum%E6%BA%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小资料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../win%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E6%BF%80%E6%B4%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    win系统激活
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    deespeek api
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    deespeek api
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deepseek-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeepSeek API 文档
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeepSeek API 文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、实验概要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、实验内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、实验目标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、环境要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、实验步骤
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、实验步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 实验任务一： 代码改写
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 实验任务一： 代码改写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 实验任务二： 代码解释
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 实验任务二： 代码解释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 实验任务三： 代码生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 实验任务三： 代码生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 实验任务四： 内容分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 实验任务四： 内容分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 实验任务五： 结构化输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 实验任务五： 结构化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#552" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 实验任务六： 角色扮演（自定义人设）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 实验任务六： 角色扮演（自定义人设）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#561" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#562" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 实验任务七： 角色扮演（情景续写）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.7 实验任务七： 角色扮演（情景续写）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#572" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8 实验任务八： 诗歌创作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.8 实验任务八： 诗歌创作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#581" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#582" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9 实验任务九： 散文写作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.9 实验任务九： 散文写作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#591" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#592" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10 实验任务十： 文案大纲生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.10 实验任务十： 文案大纲生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5101" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5102" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11 实验任务十一： 宣传标语生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.11 实验任务十一： 宣传标语生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5111" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5112" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12 实验任务十二： 模型提示词生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.12 实验任务十二： 模型提示词生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5121" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5122" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13 实验任务十三： 中英翻译专家
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.13 实验任务十三： 中英翻译专家">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5131" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5132" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deespeek%20%E8%81%8C%E5%9C%BA%E8%B5%8B%E8%83%BD/DeepSeek%E5%A6%82%E4%BD%95%E8%B5%8B%E8%83%BD%E8%81%8C%E5%9C%BA%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    deespeek 职场赋能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    私有云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            私有云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../openstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenStack云计算实战-综合实训
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack/Openstack%E8%BF%90%E7%BB%B4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openstack基础命令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack/heat%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openstack-heat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    容器云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            容器云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    docker
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    docker 项目
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker 项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docker%20project/Docker%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ENextcloud%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E4%B8%AA%E4%BA%BA%E7%9B%B8%E5%86%8C%E5%AE%B6%E5%BA%ADNAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docker%20project/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2Ward%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用Docker部署Ward服务器监控工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docker%20%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E5%9C%B0%E5%9D%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] docker加速地址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.yuque.com/wukong-zorrm/xwas40/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B站一小时精讲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    k8s(前期自学)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            k8s(前期自学)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../K8s%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8s介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ansible%E9%83%A8%E7%BD%B21.28.2%E9%9B%86%E7%BE%A4%28Containerd%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ansible搭建k8s
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.yuque.com/wukong-zorrm/qdoy5p" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B站一小时精讲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    老李k8s(系统学习)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            老李k8s(系统学习)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/01.%E5%BC%80%E7%AF%87/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2001/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01.开篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E6%90%AD%E5%BB%BA/02.K8s%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2002/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 02.搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/03.K8s%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2003/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 03.k8s管理利器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../老李k8s笔记/k8s学习/04.Kubesphere应用商店/笔记/Kubernetes - 04.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04.Kubesphere应用商店
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/05.Kubectl%20%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2005/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 05.Kubectl 命令指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/06.K8s%E4%B8%AD%E7%9A%84Yaml%E6%96%87%E4%BB%B6/Kubernetes%20-%2006/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 06.K8s中的Yaml文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/07.K8s%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/Kubernetes%20-%2007/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 07.K8s的命名空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../老李k8s笔记/k8s学习/08.K8s的资源配额与限制/笔记/Kubernetes - 08.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08.K8s的资源配额与限制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/09.K8s%E7%9A%84Pod/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2009/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 09.K8s的Pod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/10.%E8%8A%82%E7%82%B9%E6%B1%A1%E7%82%B9%E5%92%8C%E5%AE%B9%E5%BF%8D/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 10.节点污点和容忍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/11.K8s%E7%9A%84Label/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 11.K8s的Label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/12.K8s%E6%8E%A7%E5%88%B6%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2012/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 12.K8s控制器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/13.K8s%E7%9A%84Service/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2013/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 13.K8s的Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/14.K8s%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2014/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 14.K8s数据持久化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/15.ConfigMap%E4%B8%8ESecret/Kubernetes%20-%2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 15.ConfigMap与Secret
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/16.Ingress/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 16.Ingress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    老李实战篇
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            老李实战篇
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-Ingress实现金丝雀发布
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-K8s部署前后端分离的项目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E4%B8%AD%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-K8s中拉取私有仓库的镜像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    学习视频
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            学习视频
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    video
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    监控
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            监控
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    zabbix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mysql8.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../shell%20%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    openstack api
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            openstack api
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    user
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_flavor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flavor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../openstack%20api/create_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    selenium
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            selenium
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../selenium/selenium%E5%8E%86%E5%8F%B2%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    selenium历史学习记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../selenium/%E8%87%AA%E5%8A%A8%E5%8C%96.docx" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ansible搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deepseek-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeepSeek API 文档
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeepSeek API 文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、实验概要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、实验内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、实验目标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、环境要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、实验步骤
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、实验步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 实验任务一： 代码改写
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 实验任务一： 代码改写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 实验任务二： 代码解释
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 实验任务二： 代码解释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 实验任务三： 代码生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 实验任务三： 代码生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 实验任务四： 内容分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 实验任务四： 内容分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 实验任务五： 结构化输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 实验任务五： 结构化输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#552" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 实验任务六： 角色扮演（自定义人设）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 实验任务六： 角色扮演（自定义人设）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#561" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#562" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 实验任务七： 角色扮演（情景续写）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.7 实验任务七： 角色扮演（情景续写）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#572" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8 实验任务八： 诗歌创作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.8 实验任务八： 诗歌创作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#581" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#582" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9 实验任务九： 散文写作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.9 实验任务九： 散文写作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#591" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#592" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10 实验任务十： 文案大纲生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.10 实验任务十： 文案大纲生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5101" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5102" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.10.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11 实验任务十一： 宣传标语生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.11 实验任务十一： 宣传标语生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5111" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5112" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.11.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12 实验任务十二： 模型提示词生成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.12 实验任务十二： 模型提示词生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5121" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5122" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.12.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13 实验任务十三： 中英翻译专家
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.13 实验任务十三： 中英翻译专家">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5131" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13.1 知识要点：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5132" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.13.2 实验步骤：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>deespeek api</h1>
+
+<h3 id="deepseek-api">DeepSeek API 文档</h3>
+<h4 id="_1">一、实验概要</h4>
+<ul>
+<li><strong>核心定位</strong>：多功能AI能力集成平台</li>
+</ul>
+<h4 id="_2">二、实验内容</h4>
+<ul>
+<li>代码改写：对代码进行修改，实现纠错、注释、调优等。</li>
+<li>代码生成：生成完成特定功能的代码。</li>
+<li>结构化输出：将内容转化为Json格式。</li>
+<li>角色扮演（情景续写）：模拟场景下的任务对话。</li>
+<li>诗歌创作：根据提示词创作诗歌。</li>
+<li>宣传标语生成：生成贴合商品信息的宣传标语。</li>
+<li>中英翻译专家：进行中英文互译。</li>
+<li>代码解释：解释代码内容，帮助理解。</li>
+<li>内容分类：分析文本内容并进行自动归类。</li>
+<li>角色扮演（自定义人设）：自定义人设进行角色扮演。</li>
+<li>散文写作：根据提示词创作散文。</li>
+<li>文案大纲生成：生成文案大纲。</li>
+<li>模型提示词生成：生成高质量提示词</li>
+</ul>
+<h4 id="_3">三、实验目标</h4>
+<ul>
+<li>探索并实现多功能AI能力集成平台的功能。</li>
+<li>提升代码质量和效率。</li>
+<li>提高文本生成和处理能力。</li>
+<li>增强多语言翻译能力。</li>
+</ul>
+<h4 id="_4">四、环境要求</h4>
+<p>DeepSeek官网：https://chat.deepseek.com/</p>
+<h4 id="_5">五、实验步骤</h4>
+<h5 id="51">5.1 实验任务一： 代码改写</h5>
+<h6 id="511">5.1.1 知识要点：</h6>
+<ol>
+<li><strong>识别问题</strong>：首先明确代码中的错误或需要优化的部分，确定修改的目标。</li>
+<li><strong>添加注释</strong>：为复杂逻辑或关键步骤添加清晰的注释，帮助理解代码功能和设计意图。</li>
+<li><strong>纠错处理</strong>：定位并修正语法错误、逻辑错误或运行时异常，确保程序能正确执行预期任务。</li>
+<li><strong>性能调优</strong>：分析代码效率，优化算法、减少资源消耗（如内存、CPU），提高执行速度和响应时间。</li>
+<li><strong>测试验证</strong>：每次修改后进行充分测试，确保修复和优化措施不会引入新的问题，并且代码按预期工作</li>
+</ol>
+<h6 id="512">5.1.2 实验步骤：</h6>
+<p>1、撰写一段提示词，让大模型进行纠错、注释、调优等</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>下面这段的代码的效率很低，且没有处理边界情况。请先解释这段代码的问题与解决方法，然后进行优化：
+<span class="nv">def</span><span class="w"> </span><span class="nv">fib</span><span class="ss">(</span><span class="nv">n</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span>:
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">n</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">fib</span><span class="ss">(</span><span class="nv">n</span><span class="o">-</span><span class="mi">1</span><span class="ss">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">fib</span><span class="ss">(</span><span class="nv">n</span><span class="o">-</span><span class="mi">2</span><span class="ss">)</span>
+</code></pre></div>
+
+<p><img alt="image-20250220170051809" src="image\image-20250220170051809.png" /></p>
+<p><img alt="image-20250220170106282" src="image\image-20250220170106282.png" /></p>
+<p><img alt="image-20250220170129686" src="image\image-20250220170129686.png" /></p>
+<h5 id="52">5.2 实验任务二： 代码解释</h5>
+<h6 id="521">5.2.1 知识要点：</h6>
+<ol>
+<li><strong>概述目的</strong>：简要说明代码的整体目标或功能，让读者首先了解代码的大致用途。</li>
+<li><strong>分解结构</strong>：将代码分解成小块，逐一解释每个部分的作用。比如函数、循环、条件语句等。</li>
+<li><strong>注释关键行</strong>：对代码中复杂的或关键的行提供详细注释，解释其具体作用和运行机制。</li>
+<li><strong>解释变量和数据类型</strong>：介绍主要变量的用途及其数据类型，帮助理解数据如何在代码中流动和被处理。</li>
+<li><strong>示例输入输出</strong>：给出一些示例输入以及对应的输出，展示代码的实际运行效果，便于直观理解。</li>
+<li><strong>强调逻辑流程</strong>：重点讲解代码中的逻辑流程，如判断分支、执行顺序等，使读者能追踪程序的执行路径。</li>
+</ol>
+<h6 id="522">5.2.2 实验步骤：</h6>
+<p>1、撰写一段提示词，对代码进行解释，来帮助理解代码内容。</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">请解释下面这段代码的逻辑</span><span class="err">，</span><span class="n">并说明完成了什么功能</span><span class="err">：</span>
+
+<span class="o">//</span><span class="n">weight数组的大小</span><span class="w"> </span><span class="n">就是物品个数</span>
+<span class="k">for</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">weight</span><span class="p">.</span><span class="k">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">遍历物品</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">bagweight</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">遍历背包容量</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">weight</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i - 1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i - 1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i - 1</span><span class="o">][</span><span class="n">j - weight[i</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">value</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p><img alt="image-20250221135211564" src="image\image-20250221135211564.png" /><img alt="image-20250221135244226" src="image\image-20250221135244226.png" /></p>
+<p><img alt="image-20250221135314253" src="image\image-20250221135314253.png" /></p>
+<h5 id="53">5.3 实验任务三： 代码生成</h5>
+<h6 id="531">5.3.1 知识要点：</h6>
+<ol>
+<li><strong>清晰描述功能</strong>：明确你所需要的代码功能。</li>
+<li><strong>指定编程语言</strong>：告知使用哪种编程语言编写代码。</li>
+<li><strong>提供输入输出示例</strong>：给出期望的输入和输出例子以便准确生成代码。</li>
+<li><strong>检查与测试</strong>：获得代码后进行检查和测试以确保其按预期工作。</li>
+<li><strong>需求迭代</strong>：根据结果调整需求，优化代码直至满足所有条件。</li>
+</ol>
+<h6 id="532">5.3.2 实验步骤：</h6>
+<p>1、撰写一段提示词，让模型生成一段完成特定功能的代码。</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>请帮我用 HTML 生成一个五子棋游戏，所有代码都保存在一个 HTML 中。
+</code></pre></div>
+
+<p><img alt="image-20250221135547995" src="image\image-20250221135547995.png" /><img alt="image-20250221135624191" src="image\image-20250221135624191.png" /></p>
+<p><img alt="image-20250221140131847" src="image\image-20250221140131847.png" /></p>
+<p><img alt="image-20250221140206275" src="image\image-20250221140206275.png" /></p>
+<p><img alt="image-20250221140312476" src="image\image-20250221140312476.png" /></p>
+<p><img alt="image-20250221140401722" src="image\image-20250221140401722.png" /></p>
+<p><img alt="image-20250221140436375" src="image\image-20250221140436375.png" /></p>
+<h5 id="54">5.4 实验任务四： 内容分类</h5>
+<h6 id="541">5.4.1 知识要点：</h6>
+<h6 id="542">5.4.2 实验步骤：</h6>
+<p>1、撰写一段提示词，对文本内容进行分析，并对齐进行自动归类</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>#### 定位
+- 智能助手名称 ：新闻分类专家
+- 主要任务 ：对输入的新闻文本进行自动分类，识别其所属的新闻种类。
+
+#### 能力
+- 文本分析 ：能够准确分析新闻文本的内容和结构。
+- 分类识别 ：根据分析结果，将新闻文本分类到预定义的种类中。
+
+#### 知识储备
+- 新闻种类 ：
+  - 政治
+  - 经济
+  - 科技
+  - 娱乐
+  - 体育
+  - 教育
+  - 健康
+  - 国际
+  - 国内
+  - 社会
+
+#### 使用说明
+- 输入 ：一段新闻文本。
+- 输出 ：只输出新闻文本所属的种类，不需要额外解释。
+
+美国太空探索技术公司（SpaceX）的猎鹰9号运载火箭（Falcon 9）在经历美国联邦航空管理局（Federal Aviation Administration，FAA）短暂叫停发射后，于当地时间8月31日凌晨重启了发射任务。
+</code></pre></div>
+
+<p><img alt="image-20250220172500339" src="image\image-20250220172500339.png" /></p>
+<p><img alt="image-20250220172527454" src="image\image-20250220172527454.png" /></p>
+<h5 id="55">5.5 实验任务五： 结构化输出</h5>
+<h6 id="551">5.5.1 知识要点：</h6>
+<ol>
+<li><strong>确定数据结构</strong>：识别并定义需要转化成Json的数据和其结构（对象、数组等）。</li>
+<li><strong>键值对应</strong>：确保每个数据项都有明确的键名，并与对应的值正确配对。</li>
+<li><strong>格式规范</strong>：遵循Json格式规范，包括使用双引号包裹字符串类型的键和值，以及正确的嵌套结构。</li>
+<li><strong>验证正确性</strong>：使用工具或库验证生成的Json字符串是否合法有效，避免语法错误。</li>
+<li><strong>便于扩展</strong>：设计时考虑未来可能的修改或扩展需求，使结构既满足当前也适应未来发展。</li>
+</ol>
+<h6 id="552">5.5.2 实验步骤：</h6>
+<p>1、撰写一段提示词，将内容转化为 Json，来方便后续程序处理</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>用户将提供给你一段新闻内容，请你分析新闻内容，并提取其中的关键信息，以 JSON 的形式输出，输出的 JSON 需遵守以下的格式：
+{
+  &quot;entiry&quot;: &lt;新闻实体&gt;,
+  &quot;time&quot;: &lt;新闻时间，格式为 YYYY-mm-dd HH:MM:SS，没有请填 null&gt;,
+  &quot;summary&quot;: &lt;新闻内容总结&gt;
+}
+
+8月31日，一枚猎鹰9号运载火箭于美国东部时间凌晨3时43分从美国佛罗里达州卡纳维拉尔角发射升空，将21颗星链卫星（Starlink）送入轨道。紧接着，在当天美国东部时间凌晨4时48分，另一枚猎鹰9号运载火箭从美国加利福尼亚州范登堡太空基地发射升空，同样将21颗星链卫星成功送入轨道。两次发射间隔65分钟创猎鹰9号运载火箭最短发射间隔纪录。
+
+美国联邦航空管理局于8月30日表示，尽管对太空探索技术公司的调查仍在进行，但已允许其猎鹰9号运载火箭恢复发射。目前，双方并未透露8月28日助推器着陆失败事故的详细信息。尽管发射已恢复，但原计划进行五天太空活动的“北极星黎明”（Polaris Dawn）任务却被推迟。美国太空探索技术公司为该任务正在积极筹备，等待美国联邦航空管理局的最终批准后尽快进行发射。
+</code></pre></div>
+
+<p><img alt="image-20250221140937441" src="image\image-20250221140937441.png" /></p>
+<p><img alt="image-20250221141000040" src="image\image-20250221141000040.png" /></p>
+<h5 id="56">5.6 实验任务六： 角色扮演（自定义人设）</h5>
+<h6 id="561">5.6.1 知识要点：</h6>
+<ol>
+<li><strong>设定背景</strong>：确定角色的基本背景信息。</li>
+<li><strong>性格特点</strong>：定义角色的性格特征，包括说话方式、行为习惯和价值观等。</li>
+<li><strong>目标动机</strong>：明确角色的目标或动机，这将影响角色的决策和互动方式。</li>
+<li><strong>互动规则</strong>：设定角色与其他角色或用户互动时遵循的规则和界限。</li>
+<li><strong>一致性维护</strong>：在对话或互动过程中保持角色的一致性，使体验更加真实可信。</li>
+</ol>
+<h6 id="562">5.6.2 实验步骤：</h6>
+<p>1、撰写一段提示词，自定义人设，来与用户进行角色扮演。</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>请你扮演一个刚从美国留学回国的人，说话时候会故意中文夹杂部分英文单词，显得非常fancy，对话中总是带有很强的优越感。
+
+美国的饮食还习惯么。
+</code></pre></div>
+
+<p><img alt="image-20250221143858967" src="image\image-20250221143858967.png" /></p>
+<h5 id="57">5.7 实验任务七：  角色扮演（情景续写）</h5>
+<h6 id="571">5.7.1 知识要点：</h6>
+<ol>
+<li><strong>场景描述</strong>：清晰地描述出场景的背景、环境及涉及的任务或问题。</li>
+<li><strong>角色设定</strong>：定义参与对话的角色及其在该场景中的立场和目标。</li>
+<li><strong>对话目的</strong>：明确对话想要达成的目标或解决的问题。</li>
+<li><strong>互动逻辑</strong>：设计对话流程，考虑角色之间可能的交流方式和信息交换。</li>
+<li><strong>情境连贯性</strong>：确保对话内容符合所设定的情景，保持逻辑一致性和情境的相关性。</li>
+</ol>
+<h6 id="572">5.7.2 实验步骤：</h6>
+<p>1、撰写一段提示词，提供一个场景，让模型模拟该场景下的任务对话</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>假设诸葛亮死后在地府遇到了刘备，请模拟两个人展开一段对话。
+</code></pre></div>
+
+<p><img alt="image-20250221144403595" src="image\image-20250221144403595.png" /></p>
+<p><img alt="image-20250221144425757" src="image\image-20250221144425757.png" /></p>
+<h5 id="58">5.8 实验任务八： 诗歌创作</h5>
+<h6 id="581">5.8.1 知识要点：</h6>
+<ol>
+<li><strong>理解提示词</strong>：准确把握提示词的意义和情感色彩。</li>
+<li><strong>确定风格</strong>：选择合适的诗歌风格（如古风、现代诗等）以匹配提示词。</li>
+<li><strong>构思意象</strong>：围绕提示词构思相关的意象和表达方式。</li>
+<li><strong>韵律节奏</strong>：考虑诗句的韵律、节奏以及押韵模式（如果适用）。</li>
+<li><strong>情感表达</strong>：确保诗歌能够传达出与提示词相符合的情感或意境。</li>
+</ol>
+<h6 id="582">5.8.2 实验步骤：</h6>
+<p>1、撰写一段提示词，让模型根据提示词，创作诗歌</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>模仿李白的风格写一首七律.飞机
+</code></pre></div>
+
+<p><img alt="image-20250221145721258" src="image\image-20250221145721258.png" /></p>
+<h5 id="59">5.9 实验任务九： 散文写作</h5>
+<h6 id="591">5.9.1 知识要点：</h6>
+<ol>
+<li><strong>理解主题</strong>：深入理解提示词的主题和内涵，确定散文的核心思想。</li>
+<li><strong>自由形式</strong>：利用散文不拘一格的特点，灵活组织文章结构。</li>
+<li><strong>情感融入</strong>：将个人或设定的情感融入文字中，增强文章感染力。</li>
+<li><strong>细腻描写</strong>：注重细节描写，通过具体的场景、人物或事物来表达主题。</li>
+<li><strong>流畅过渡</strong>：确保段落之间的过渡自然流畅，使整篇文章连贯一致。</li>
+</ol>
+<h6 id="592">5.9.2 实验步骤：</h6>
+<p>1、撰写一段提示词，让模型根据提示词创作散文</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>以孤独的夜行者为题写一篇750字的散文，描绘一个人在城市中夜晚漫无目的行走的心情与所见所感，以及夜的寂静给予的独特感悟。
+</code></pre></div>
+
+<p><img alt="image-20250221151207390" src="image\image-20250221151207390.png" /></p>
+<p><img alt="image-20250221151228414" src="image\image-20250221151228414.png" /></p>
+<h5 id="510">5.10 实验任务十： 文案大纲生成</h5>
+<h6 id="5101">5.10.1 知识要点：</h6>
+<ol>
+<li><strong>明确主题</strong>：准确理解用户提供的主题焦点。</li>
+<li><strong>目标分析</strong>：确定文案的目的及期望达成的效果。</li>
+<li><strong>受众定位</strong>：识别目标读者群体的特点和需求。</li>
+<li><strong>核心信息</strong>：提炼出与主题相关的核心信息点。</li>
+<li><strong>结构设计</strong>：规划文案的基本框架，如开头、中间和结尾部分。</li>
+<li><strong>内容细化</strong>：将核心信息分配到各部分内容中，确保逻辑清晰。</li>
+<li><strong>调性选择</strong>：根据目标受众选择合适的语言风格和语气。</li>
+</ol>
+<h6 id="5102">5.10.2 实验步骤：</h6>
+<p>1、撰写一段提示词，根据用户提供的主题，来生成文案大纲</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>你是一位文本大纲生成专家，擅长根据用户的需求创建一个有条理且易于扩展成完整文章的大纲，你拥有强大的主题分析能力，能准确提取关键信息和核心要点。具备丰富的文案写作知识储备，熟悉各种文体和题材的文案大纲构建方法。可根据不同的主题需求，如商业文案、文学创作、学术论文等，生成具有针对性、逻辑性和条理性的文案大纲，并且能确保大纲结构合理、逻辑通顺。该大纲应该包含以下部分：
+引言：介绍主题背景，阐述撰写目的，并吸引读者兴趣。
+主体部分：第一段落：详细说明第一个关键点或论据，支持观点并引用相关数据或案例。
+第二段落：深入探讨第二个重点，继续论证或展开叙述，保持内容的连贯性和深度。
+第三段落：如果有必要，进一步讨论其他重要方面，或者提供不同的视角和证据。
+结论：总结所有要点，重申主要观点，并给出有力的结尾陈述，可以是呼吁行动、提出展望或其他形式的收尾。
+创意性标题：为文章构思一个引人注目的标题，确保它既反映了文章的核心内容又能激发读者的好奇心。
+
+请帮我生成“中国农业情况”这篇文章的大纲
+</code></pre></div>
+
+<p><img alt="image-20250221153955865" src="image\image-20250221153955865.png" /></p>
+<p><img alt="image-20250221154017537" src="image\image-20250221154017537.png" /></p>
+<p><img alt="image-20250221154039106" src="image\image-20250221154039106.png" /></p>
+<p><img alt="image-20250221154057650" src="image\image-20250221154057650.png" /></p>
+<h5 id="511_1">5.11 实验任务十一： 宣传标语生成</h5>
+<h6 id="5111">5.11.1 知识要点：</h6>
+<ol>
+<li><strong>理解商品</strong>：深入理解商品的核心功能、特点及目标受众。</li>
+<li><strong>突出卖点</strong>：明确并强调商品的独特卖点或优势。</li>
+<li><strong>简洁明了</strong>：使用简洁的语言，确保标语易记易懂。</li>
+<li><strong>吸引注意</strong>：创造引人注目的表达方式，激发潜在顾客的兴趣。</li>
+<li><strong>情感共鸣</strong>：利用情感诉求，使标语能够引起目标群体的情感共鸣。</li>
+<li><strong>行动号召</strong>：包含明确的行动号召，鼓励消费者采取下一步行动。</li>
+</ol>
+<h6 id="5112">5.11.2 实验步骤：</h6>
+<p>1、撰写一段提示词，让模型生成贴合商品信息的宣传标语。</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>你是一个宣传标语专家，请根据用户需求设计一个独具创意且引人注目的宣传标语，需结合该产品/活动的核心价值和特点，同时融入新颖的表达方式或视角。请确保标语能够激发潜在客户的兴趣，并能留下深刻印象，可以考虑采用比喻、双关或其他修辞手法来增强语言的表现力。标语应简洁明了，需要朗朗上口，易于理解和记忆，一定要押韵，不要太过书面化。只输出宣传标语，不用解释。
+
+请生成”希腊酸奶“的宣传标语
+</code></pre></div>
+
+<p><img alt="image-20250221160002355" src="image\image-20250221160002355.png" /></p>
+<h5 id="512_1">5.12 实验任务十二： 模型提示词生成</h5>
+<h6 id="5121">5.12.1 知识要点：</h6>
+<ol>
+<li><strong>明确需求</strong>：准确理解用户的实际需求和目标。</li>
+<li><strong>关键词提取</strong>：识别与需求相关的核心词汇和概念。</li>
+<li><strong>上下文考虑</strong>：结合使用场景或背景信息优化提示词。</li>
+<li><strong>清晰表达</strong>：确保提示词表述清晰，避免歧义。</li>
+<li><strong>激发创意</strong>：设计能够激发模型创造力的开放性提示词。</li>
+<li><strong>测试调整</strong>：初步生成后进行测试，并根据反馈调整提示词。</li>
+</ol>
+<h6 id="5122">5.12.2 实验步骤：</h6>
+<p>1、撰写一段提示词，根据用户需求，帮助生成高质量提示词</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>你是一位大模型提示词生成专家，请根据用户的需求编写一个智能助手的提示词，来指导大模型进行内容生成，要求：
+1. 以 Markdown 格式输出
+2. 贴合用户需求，描述智能助手的定位、能力、知识储备
+3. 提示词应清晰、精确、易于理解，在保持质量的同时，尽可能简洁
+4. 只输出提示词，不要输出多余解释
+
+请帮我生成一个“Linux 助手”的提示词
+</code></pre></div>
+
+<p><img alt="image-20250221160216655" src="image\image-20250221160216655.png" /></p>
+<p><img alt="image-20250221160252796" src="image\image-20250221160252796.png" /></p>
+<h5 id="513">5.13 实验任务十三： 中英翻译专家</h5>
+<h6 id="5131">5.13.1 知识要点：</h6>
+<ol>
+<li><strong>理解原文</strong>：准确把握用户输入内容的含义和语境。</li>
+<li><strong>文化适应</strong>：考虑语言背后的文化差异，确保翻译恰当。</li>
+<li><strong>术语准确</strong>：正确处理专业术语及固定表达，保证准确性。</li>
+<li><strong>语法正确</strong>：遵循目标语言的语法规则，确保句子结构正确。</li>
+<li><strong>自然流畅</strong>：使翻译后的文本读起来自然、流畅，符合目标语言习惯。</li>
+<li><strong>一致性检查</strong>：保持术语和风格在整个文档或会话中的一致性</li>
+</ol>
+<h6 id="5132">5.13.2 实验步骤：</h6>
+<p>1、撰写一段提示词，中英文互译，对用户输入内容进行翻译</p>
+<p>2、提示词示例:</p>
+<div class="codehilite"><pre><span></span><code>你是一个中英文翻译专家，将用户输入的中文翻译成英文，或将用户输入的英文翻译成中文。对于非中文内容，它将提供中文翻译结果。用户可以向助手发送需要翻译的内容，助手会回答相应的翻译结果，并确保符合中文语言习惯，你可以调整语气和风格，并考虑到某些词语的文化内涵和地区差异。同时作为翻译家，需将原文翻译成具有信达雅标准的译文。&quot;信&quot; 即忠实于原文的内容与意图；&quot;达&quot; 意味着译文应通顺易懂，表达清晰；&quot;雅&quot; 则追求译文的文化审美和语言的优美。目标是创作出既忠于原作精神，又符合目标语言文化和读者审美的翻译。
+
+牛顿第一定律：任何一个物体总是保持静止状态或者匀速直线运动状态，直到有作用在它上面的外力迫使它改变这种状态为止。 如果作用在物体上的合力为零，则物体保持匀速直线运动。 即物体的速度保持不变且加速度为零。
+</code></pre></div>
+
+<p><img alt="image-20250221160438317" src="image\image-20250221160438317.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2020 Martin Donath
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<2915597808@qq.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.code.select", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>
