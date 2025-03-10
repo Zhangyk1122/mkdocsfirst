@@ -17,7 +17,8 @@ nav:
         - docker 项目: 
             - Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS: ./资料/docker project/Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS.md
             - 使用Docker部署Ward服务器监控工具: ./资料/docker project/使用Docker部署Ward服务器监控工具.md       
-        - docker加速地址 : 资料/docker 镜像加速地址.md
+            - 芋道后台系统部署: ./资料/docker project/芋道后台管理系统部署.md
+            - docker加速地址 : 资料/docker 镜像加速地址.md
         - B站一小时精讲: https://www.yuque.com/wukong-zorrm/xwas40/
     - k8s(前期自学):
       - K8s介绍: 资料/K8s介绍.md
