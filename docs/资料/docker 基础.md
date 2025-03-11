@@ -21,37 +21,13 @@ sudo yum remove docker \
 
 
 
+
+
 ### docker 安装
 
 ```
-# docker-ce.repo
-cat > /etc/yum.repos.d/docker-ce.repo <<eof
-[edge]
-name=edge
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7.9/x86_64/edge/
-gpgcheck=0
-enabled=1
-[nightly]
-name=nightly
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7.9/x86_64/nightly/
-gpgcheck=0
-enabled=1
-[stable]
-name=stable
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7.9/x86_64/stable/
-gpgcheck=0
-enabled=1
-[test]
-name=test
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7.9/x86_64/test/
-gpgcheck=0
-enabled=1
-eof
-```
-
-```
-yum list docker-ce --showduplicates
-yum clean all && yum repolist
+yum install -y yum-utils device-mapper-persistent-data lvm2  # 安装依赖
+yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 

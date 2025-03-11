@@ -2,9 +2,8 @@ site_name: 理想乡随手记
 nav:
   - 首页:
     - 首页:  index.md 
-    - 百宝箱:
-      - 小资料: 资料/阿里云yum源.md
-      - win系统激活: 资料/win系统快速激活.md
+    - 小资料: 资料/阿里云yum源.md
+    - win系统激活: 资料/win系统快速激活.md
   - ai:
     - deespeek api: 资料/deespeek/deespeek api/deepseek api 文档/DeepSeek API 文档.md
     - deespeek 职场赋能: 资料/deespeek/deespeek 职场赋能/DeepSeek如何赋能职场应用.md
@@ -18,7 +17,7 @@ nav:
             - Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS: ./资料/docker project/Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS.md
             - 使用Docker部署Ward服务器监控工具: ./资料/docker project/使用Docker部署Ward服务器监控工具.md       
             - 芋道后台系统部署: ./资料/docker project/芋道后台管理系统部署.md
-            - docker加速地址 : 资料/docker 镜像加速地址.md
+            - docker基础 : 资料/docker 基础.md
         - B站一小时精讲: https://www.yuque.com/wukong-zorrm/xwas40/
     - k8s(前期自学):
       - K8s介绍: 资料/K8s介绍.md
