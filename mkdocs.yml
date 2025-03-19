@@ -8,6 +8,7 @@ nav:
   - ai:
     - deespeek api: 资料/deespeek/deespeek api/deepseek api 文档/DeepSeek API 文档.md
     - deespeek 职场赋能: 资料/deespeek/deespeek 职场赋能/DeepSeek如何赋能职场应用.md
+    - ubuntu搭建ai模型: 资料/linux ubuntu快速部署ai模型.md
   - 私有云:
     - OpenStack云计算实战-综合实训: 资料/openstack.md
     - openstack基础命令: ./openstack/Openstack运维.html
