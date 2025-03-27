@@ -18,16 +18,14 @@ nav:
         - docker 项目: 
             - docker基础 : 资料/docker 基础.md
             - 芋道后台系统部署: ./资料/docker project/芋道后台管理系统部署.md
-            - Promethus监控: 资料/docker project/Prometheus监控快速搭建.md
             - Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS: ./资料/docker project/Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS.md
             - 使用Docker部署Ward服务器监控工具: ./资料/docker project/使用Docker部署Ward服务器监控工具.md       
             
-            
         - B站一小时精讲: https://www.yuque.com/wukong-zorrm/xwas40/
     - k8s(前期自学):
-      - K8s介绍: 资料/K8s介绍.md
       - ansible搭建k8s: 资料/ansible部署1.28.2集群(Containerd).md
-      - B站一小时精讲: https://www.yuque.com/wukong-zorrm/qdoy5p
+      - kubeshere:
+        - kubeshere安装: 资料/kubesphere安装.md
     - 老李k8s(系统学习):
        - 01.开篇: 老李k8s笔记/k8s学习/01.开篇/笔记/Kubernetes - 01.md
        - 02.搭建: 老李k8s笔记/k8s搭建/02.K8s环境搭建/笔记/Kubernetes - 02.md
@@ -49,10 +47,10 @@ nav:
        - 实战篇-Ingress实现金丝雀发布: 老李k8s笔记/k8s学习/实战篇-Ingress实现金丝雀发布/笔记/实战篇-Ingress实现金丝雀发布.md
        - 实战篇-K8s部署前后端分离的项目: 老李k8s笔记/k8s学习/实战篇-K8s部署前后端分离的项目/笔记/实战篇-K8s部署前后端分离的项目.md
        - 实战篇-K8s中拉取私有仓库的镜像: 老李k8s笔记/k8s学习/实战篇-K8s中拉取私有仓库的镜像/笔记/实战篇-K8s拉取私有仓库的镜像.md
-  - 学习视频:
-    - video: 学习视频/video.md
+       
   - 监控:
     - zabbix: 资料/rocky linux 部署zabbix.md
+    - Promethus监控: 资料/docker project/Prometheus监控快速搭建.md
   - 数据库:
     - mysql8.0: 资料/mysql8.0 快速搭建.md
   - shell: 资料/shell 学习.md
