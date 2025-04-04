@@ -4,7 +4,6 @@ nav:
     - 首页:  index.md 
     - 小资料: 资料/阿里云yum源.md
     - win系统激活: 资料/win系统快速激活.md
-    - EFK日志收集: 资料/EFK日志收集.md
   - ai:
     - deespeek api: 资料/deespeek/deespeek api/deepseek api 文档/DeepSeek API 文档.md
     - deespeek 职场赋能: 资料/deespeek/deespeek 职场赋能/DeepSeek如何赋能职场应用.md
@@ -30,7 +29,7 @@ nav:
        - 01.开篇: 老李k8s笔记/k8s学习/01.开篇/笔记/Kubernetes - 01.md
        - 02.搭建: 老李k8s笔记/k8s搭建/02.K8s环境搭建/笔记/Kubernetes - 02.md
        - 03.k8s管理利器: 老李k8s笔记/k8s学习/03.K8s管理利器/笔记/Kubernetes - 03.md
-       - 04.Kubesphere应用商店: 老李k8s笔记/k8s学习/04.Kubesphere应用商店/笔记\Kubernetes - 04.md
+       - 04.Kubesphere应用商店: 老李k8s笔记/k8s学习/04.Kubesphere应用商店/笔记/Kubernetes - 04.md
        - 05.Kubectl 命令指南: 老李k8s笔记/k8s学习/05.Kubectl 命令指南/笔记/Kubernetes - 05.md
        - 06.K8s中的Yaml文件: 老李k8s笔记/k8s学习/06.K8s中的Yaml文件/Kubernetes - 06.md
        - 07.K8s的命名空间: 老李k8s笔记/k8s学习/07.K8s的命名空间/Kubernetes - 07.md
@@ -51,8 +50,10 @@ nav:
   - 监控:
     - zabbix: 资料/rocky linux 部署zabbix.md
     - Promethus监控: 资料/docker project/Prometheus监控快速搭建.md
-  - 数据库:
+  - 中间件:
     - mysql8.0: 资料/mysql8.0 快速搭建.md
+    - Nginx学习: 中间件/nginx.md
+    - EFK日志收集: 资料/EFK日志收集.md
   - shell: 资料/shell 学习.md
   - python:
     - openstack api:
