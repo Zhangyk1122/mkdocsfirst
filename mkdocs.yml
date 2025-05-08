@@ -4,6 +4,12 @@ nav:
     - 首页:  index.md 
     - 小资料: 资料/阿里云yum源.md
     - win系统激活: 资料/win系统快速激活.md
+    - hadoop大数据平台:
+        - hadoop集群安装: hadoop/1.Hadoop集群安装部署.md
+        - 数据库安装: hadoop/2.Centos系统Mysql 5.7安装部署.md
+        - Hive安装: hadoop/3.Hive 本地安装部署.md
+        - Hive单词统计: hadoop/4.Hive单词统计案例.md
+    - 口袋觉醒手游搭建: 资料/口袋觉醒搭建教程.md
   - ai:
     - deespeek api: 资料/deespeek/deespeek api/deepseek api 文档/DeepSeek API 文档.md
     - deespeek 职场赋能: 资料/deespeek/deespeek 职场赋能/DeepSeek如何赋能职场应用.md
