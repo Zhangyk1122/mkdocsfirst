@@ -1,0 +1,4922 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../shell%20%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="next" href="../../openstack%20api/create_image/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>python基础 - 理想乡随手记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="理想乡随手记" class="md-header__button md-logo" aria-label="理想乡随手记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            理想乡随手记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              python基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deespeek/deespeek%20api/deepseek%20api%20%E6%96%87%E6%A1%A3/DeepSeek%20API%20%E6%96%87%E6%A1%A3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ai
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../openstack/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  私有云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../docker%20%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  容器云
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  监控
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  中间件
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../shell%20%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  shell
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ansible/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ansible
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="理想乡随手记" class="md-nav__button md-logo" aria-label="理想乡随手记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    理想乡随手记
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/squidfunk/mkdocs-material" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%98%BF%E9%87%8C%E4%BA%91yum%E6%BA%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    小资料
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../win%E7%B3%BB%E7%BB%9F%E5%BF%AB%E9%80%9F%E6%BF%80%E6%B4%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    win系统激活
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    hadoop大数据平台
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            hadoop大数据平台
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hadoop/1.Hadoop%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    hadoop集群安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hadoop/2.Centos%E7%B3%BB%E7%BB%9FMysql%205.7%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hadoop/3.Hive%20%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hive安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hadoop/4.Hive%E5%8D%95%E8%AF%8D%E7%BB%9F%E8%AE%A1%E6%A1%88%E4%BE%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hive单词统计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%A3%E8%A2%8B%E8%A7%89%E9%86%92%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    口袋觉醒手游搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deespeek/deespeek%20api/deepseek%20api%20%E6%96%87%E6%A1%A3/DeepSeek%20API%20%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    deespeek api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deespeek/deespeek%20%E8%81%8C%E5%9C%BA%E8%B5%8B%E8%83%BD/DeepSeek%E5%A6%82%E4%BD%95%E8%B5%8B%E8%83%BD%E8%81%8C%E5%9C%BA%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    deespeek 职场赋能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux%20ubuntu%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2ai%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ubuntu搭建ai模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    私有云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            私有云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenStack云计算实战-综合实训
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack/Openstack%E8%BF%90%E7%BB%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openstack基础命令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack/heat%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    openstack-heat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    容器云
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            容器云
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    docker
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    docker 项目
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            docker 项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] docker基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20project/%E8%8A%8B%E9%81%93%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    芋道后台系统部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20project/Docker%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8ENextcloud%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BA%91%E7%9B%98%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E4%B8%AA%E4%BA%BA%E7%9B%B8%E5%86%8C%E5%AE%B6%E5%BA%ADNAS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker搭建基于Nextcloud的个人云盘私有云盘个人相册家庭NAS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20project/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2Ward%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    使用Docker部署Ward服务器监控工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.yuque.com/wukong-zorrm/xwas40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    B站一小时精讲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    k8s(前期自学)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            k8s(前期自学)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible%E9%83%A8%E7%BD%B21.28.2%E9%9B%86%E7%BE%A4%28Containerd%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ansible搭建k8s
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    kubeshere
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            kubeshere
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubesphere%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    kubeshere安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    老李k8s(系统学习)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            老李k8s(系统学习)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/01.%E5%BC%80%E7%AF%87/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01.开篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E6%90%AD%E5%BB%BA/02.K8s%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 02.搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/03.K8s%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2003/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 03.k8s管理利器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/04.Kubesphere%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2004/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 04.Kubesphere应用商店
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/05.Kubectl%20%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2005/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 05.Kubectl 命令指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/06.K8s%E4%B8%AD%E7%9A%84Yaml%E6%96%87%E4%BB%B6/Kubernetes%20-%2006/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 06.K8s中的Yaml文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/07.K8s%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/Kubernetes%20-%2007/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 07.K8s的命名空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../老李k8s笔记/k8s学习/08.K8s的资源配额与限制/笔记/Kubernetes - 08.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08.K8s的资源配额与限制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/09.K8s%E7%9A%84Pod/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2009/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 09.K8s的Pod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/10.%E8%8A%82%E7%82%B9%E6%B1%A1%E7%82%B9%E5%92%8C%E5%AE%B9%E5%BF%8D/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2010/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 10.节点污点和容忍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/11.K8s%E7%9A%84Label/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 11.K8s的Label
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/12.K8s%E6%8E%A7%E5%88%B6%E5%99%A8/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 12.K8s控制器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/13.K8s%E7%9A%84Service/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 13.K8s的Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/14.K8s%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 14.K8s数据持久化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/15.ConfigMap%E4%B8%8ESecret/Kubernetes%20-%2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 15.ConfigMap与Secret
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/16.Ingress/%E7%AC%94%E8%AE%B0/Kubernetes%20-%2016/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 16.Ingress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    老李实战篇
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            老李实战篇
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-Ingress%E5%AE%9E%E7%8E%B0%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-Ingress实现金丝雀发布
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-K8s部署前后端分离的项目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%80%81%E6%9D%8Ek8s%E7%AC%94%E8%AE%B0/k8s%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E4%B8%AD%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E6%88%98%E7%AF%87-K8s%E6%8B%89%E5%8F%96%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [Protected] 实战篇-K8s中拉取私有仓库的镜像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    监控
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            监控
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rocky%20linux%20%E9%83%A8%E7%BD%B2zabbix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    zabbix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20project/Prometheus%E7%9B%91%E6%8E%A7%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Promethus监控
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    中间件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            中间件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mysql8.0本地搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mysql练习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E9%97%B4%E4%BB%B6/nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nginx学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EFK%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EFK日志收集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell%20%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    python基础
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    python基础
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四天
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四天">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      列表操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      字典操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      第八天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      第九天
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    openstack api
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            openstack api
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack%20api/create_image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    image
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack%20api/create_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    user
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack%20api/create_flavor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    flavor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openstack%20api/create_network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    selenium
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            selenium
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/selenium%E5%8E%86%E5%8F%B2%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    selenium历史学习记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selenium/%E8%87%AA%E5%8A%A8%E5%8C%96.docx" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自动化文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansible/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ansible搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四天
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四天">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      列表操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      字典操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      第八天
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      第九天
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>python基础</h1>
+
+<h3 id="_1">第二天</h3>
+<p>1.编程语言中为什么要使用变量
+<strong>使用变量是存储特定的数据</strong>
+2.Python中如何定义变量，变量的命名有什么规范
+<strong>变量一般以英文命名，在python定义变量也简单</strong>
+  <strong>a = 20</strong>
+  <strong>name= zhangsan</strong></p>
+<p>3.编程语言中，逻辑控制的三大支柱是什么
+<strong>编程语言中的逻辑控制主要依赖于三种结构：顺序结构、选择结构（分支结构）和循环结构。</strong>
+4.Python中 数字类型和字符串类型有什么区别</p>
+<div class="codehilite"><pre><span></span><code>数字类型：包括整数（int）、浮点数（float）和复数（complex）。它们用于表示数值，并支持数学运算。
+字符串类型（str）：用于表示文本数据，由一系列字符组成。字符串支持拼接、切片等操作，但不支持数学运算。5.Python中还有哪些类型。
+布尔值、列表、元组、字典、集合
+</code></pre></div>
+
+<p>1.如何表示一个字符串</p>
+<div class="codehilite"><pre><span></span><code> str = ‘hello word’   字符串需要加引号*
+</code></pre></div>
+
+<p>2.使用双引号和单引号有什么区别
+没有多大区别，同样是表示字符串，不过在一段字符串里面有引号的话，外面的字符就需要双引号包裹</p>
+<div class="codehilite"><pre><span></span><code>str = &quot;hello &#39;word&#39; &quot;
+</code></pre></div>
+
+<p>3.如何拼接两个字符串
+<strong>可以使用加号进行, str 1 = 'hello'  str 2 ='word'</strong></p>
+<p><strong>str 3 = str 1 + str 2</strong>   </p>
+<p><strong>print(str 3)</strong></p>
+<p>4.什么是字符串占位符</p>
+<p><strong>字符串占位符是一种在字符串中预留位置的方法，可以在后续用具体的值替换这些位置</strong></p>
+<p>5.Python中有几种方式实现字符串占位符</p>
+<p><strong>常用的占位符有 <code>%s</code>（字符串）、<code>%d</code>（整数）等</strong></p>
+<p>计算:
+1.python中的数字类型支持哪些常用的基础计算方式</p>
+<p><strong>Python中的数字类型支持加（+）、减（-）、乘（*）、除（/）、取模（%）、幂（</strong>）等基础计算方式。**</p>
+<p>2.判断一个数字能否被2整除，需要使用哪种计算方式</p>
+<div class="codehilite"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">nums</span> <span class="o">%</span> <span class="n">num</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+
+<p>3.如何让数字类型的变量值自增1，比如a=2，如何让a的值变为了(要求你写的语句，在初始a=5的时候，能够让a=6)</p>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  
+</code></pre></div>
+
+<p>对列表的一系列问题
+1.Python中的列表是什么，跟单独的一个变量有什么区别。</p>
+<p><strong>列表是一种有序的集合，可以随时添加和删除其中的元素。列表可以包含不同类型的元素。与单独的变量相比，列表可以存储多个值，并且可以通过索引来访问这些值。</strong></p>
+<p>2.如何定义一个列表。  使用括号</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3, &quot;hello&quot;, &quot;world&quot;]
+</code></pre></div>
+
+<p>3.在Python中，列表中的内容一般会被称为什么</p>
+<p><strong>列表中的内容被称为元素</strong></p>
+<p>4.如何获取列表的长度   可以使用内置函数 <code>len()</code> 来获取列表的长度。例如</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3, &quot;hello&quot;, &quot;world&quot;]
+length = len(my_list)
+print(length)  
+</code></pre></div>
+
+<p>5.什么是列表的下标，下标从几开始。</p>
+<p><strong>列表的下标用于标识列表中的每个元素的位置。在Python中，下标从0开始</strong></p>
+<p>6.如何在列表中添加一个元素 </p>
+<p>可以使用 <code>append()</code> 方法在列表末尾添加一个元素</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # 输出: [1, 2, 3, 4]
+</code></pre></div>
+
+<p>7.如何在列表的任意位置插入元素</p>
+<p><strong>可以使用 <code>insert()</code> 方法在列表的指定位置插入元素</strong></p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3]
+my_list.insert(1, 4)
+print(my_list)  # 输出: [1, 4, 2, 3]
+</code></pre></div>
+
+<p>8.如何删除列表中的元素</p>
+<p>可以使用 <code>remove()</code> 方法删除列表中的指定元素</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3, 4]
+my_list.remove(2)
+print(my_list)  
+</code></pre></div>
+
+<p>9.如何修改指定位置元素的值循环和判断的问题</p>
+<p>可以直接通过下标来修改列表中指定位置的元素值</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3]
+my_list[1] = 4
+print(my_list)  
+输出: [1, 4, 3]
+</code></pre></div>
+
+<p>1.为一个变量赋值一个数字，对变量进行判断输出此值是大于还是小于或者等于8</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">num</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;大于8&quot;</span><span class="ss">)</span>
+<span class="nv">elif</span><span class="w"> </span><span class="nv">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;小于8&quot;</span><span class="ss">)</span>
+<span class="k">else</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;等于8&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>2.如何依次输出列表中的元素</p>
+<div class="codehilite"><pre><span></span><code>my_list = [1, 2, 3, 4, 5]
+for item in my_list:
+    print(item)
+</code></pre></div>
+
+<p>3.如何从1输出到100，如何只输出偶数，或者奇数。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">101</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span>:<span class="w"> </span>#偶数
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>4.使用for循环输出1到9</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>5.在for循环中嵌套for循环，输出9次 1到9</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="nv">j</span>,<span class="w"> </span><span class="k">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">print</span><span class="ss">()</span>
+</code></pre></div>
+
+<h3 id="_2">第三天</h3>
+<p>字典相关内容：
+\1. 什么是字典</p>
+<p>在 Python 中，<strong>字典（dictionary）</strong> 是一种可变、无序的键值对集合。每个元素由一个“键”和一个“值”组成，用于快速查找、存储数据。</p>
+<p>\2. 如何理解键值对</p>
+<ul>
+<li><strong>键（key）</strong>：用于唯一标识一个值。</li>
+<li><strong>值（value）</strong>：与键关联的数据。</li>
+</ul>
+<p>键必须是不可变类型（如字符串、数字、元组），而值可以是任意类型。</p>
+<p>\3. 使用python定义一个字典，包含三个值：name（小明）、age（18）和city（BeiJing）。</p>
+<div class="codehilite"><pre><span></span><code>person = {&quot;name&quot;: &quot;小明&quot;, &quot;age&quot;: 18, &quot;city&quot;: &quot;BeiJing&quot;}
+</code></pre></div>
+
+<p>\4. 如何在字典中增加一个键值对，比如为上述字典增加一个电话号码的键值对。</p>
+<div class="codehilite"><pre><span></span><code>#给上述添加电话
+person[&quot;phone&quot;] = &quot;123456789&quot;
+</code></pre></div>
+
+<p>\5. 如何更改字典中某个键的值，比如修改年龄为20</p>
+<div class="codehilite"><pre><span></span><code>person[&quot;age&quot;] = 20
+</code></pre></div>
+
+<p>\6. 如何删除字典中的某个键值对，比如删除城市</p>
+<div class="codehilite"><pre><span></span><code>del person[&quot;city&quot;]
+</code></pre></div>
+
+<p>\7. 遍历字典输出所有键值对</p>
+<div class="codehilite"><pre><span></span><code>for key<span class="p">,</span> value <span class="k">in</span> person<span class="o">.</span>items<span class="p">():</span>
+    print<span class="p">(</span>f<span class="s2">&quot;{key}: {value}&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>完成以上内容后，我们已经具备完成第一阶段目标的所有基础知识了。剩下的就是一些技巧和逻辑了。需要先对需求进行拆分。
+99乘法表的规律是什么？
+\1. 99乘法表中哪些内容是变化的，哪些内容是固定的</p>
+<ul>
+<li><strong>变化的</strong>：行号（第一个数）、列号（第二个数）</li>
+<li><strong>固定的</strong>：格式为 <code>i * j = i*j</code>，且范围是1~9</li>
+</ul>
+<p>\2. 这些变化的内容有什么规律，如何实现</p>
+<ul>
+<li>第一层循环控制行（从1到9）</li>
+<li>第二层循环控制列（从1到当前行</li>
+</ul>
+<p>\3. 使用循环输出1-9的值。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>\4. 在第一个循环中嵌套第二个循环，要求第二个循环只输出大于等于第一个循环的数字，最大值为9。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="nv">i</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="nv">j</span>,<span class="w"> </span><span class="k">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">print</span><span class="ss">()</span>
+</code></pre></div>
+
+<p>\5. 计算第一个循环和第二个循环的乘积。</p>
+<div class="codehilite"><pre><span></span><code>for i in range(1, 10):
+    for j in range(i, 10):
+        print(f&quot;{i}*{j}={i*j}&quot;, end=&quot;\t&quot;)
+    print()
+</code></pre></div>
+
+<p>扑克牌的内容有什么规律？
+\1. 使用循环输出四种花色</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">suits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s2">&quot;♠&quot;</span>,<span class="w"> </span><span class="s2">&quot;♥&quot;</span>,<span class="w"> </span><span class="s2">&quot;♦&quot;</span>,<span class="w"> </span><span class="s2">&quot;♣&quot;</span>]
+<span class="k">for</span><span class="w"> </span><span class="nv">suit</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">suits</span>:
+<span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">suit</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>\2. 在第一个循环中嵌套第二个循环，输出A-K，并以字符串方式拼接第一个循环中的花色</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">ranks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s2">&quot;A&quot;</span>,<span class="w"> </span><span class="s2">&quot;2&quot;</span>,<span class="w"> </span><span class="s2">&quot;3&quot;</span>,<span class="w"> </span><span class="s2">&quot;4&quot;</span>,<span class="w"> </span><span class="s2">&quot;5&quot;</span>,<span class="w"> </span><span class="s2">&quot;6&quot;</span>,<span class="w"> </span><span class="s2">&quot;7&quot;</span>,<span class="w"> </span><span class="s2">&quot;8&quot;</span>,<span class="w"> </span><span class="s2">&quot;9&quot;</span>,<span class="w"> </span><span class="s2">&quot;10&quot;</span>,<span class="w"> </span><span class="s2">&quot;J&quot;</span>,<span class="w"> </span><span class="s2">&quot;Q&quot;</span>,<span class="w"> </span><span class="s2">&quot;K&quot;</span>]
+<span class="nv">suits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s2">&quot;♠&quot;</span>,<span class="w"> </span><span class="s2">&quot;♥&quot;</span>,<span class="w"> </span><span class="s2">&quot;♦&quot;</span>,<span class="w"> </span><span class="s2">&quot;♣&quot;</span>]
+<span class="k">for</span><span class="w"> </span><span class="nv">suit</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">suits</span>:
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nv">rank</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">ranks</span>:
+<span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="nv">f</span><span class="s2">&quot;{suit}{rank}&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>\3. 输出大王和小王。</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;小王&quot;</span>,<span class="w"> </span><span class="k">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="ss">)</span>
+<span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;大王&quot;</span><span class="ss">)</span>
+</code></pre></div>
+
+<h3 id="_3">第四天</h3>
+<p>\1. 元组是什么</p>
+<p>元组是不可变，有序的序列容器，用 () 表示</p>
+<p>\2. 什么是函数</p>
+<p>函数是封装特定功能的代码块，通过 def 定义。可重复调用，提高代码复用性</p>
+<p>\3. 什么是参数</p>
+<p>参数是函数定义时接收外部数据的占位变量</p>
+<p>\4. 什么是形参，什么是实参</p>
+<p>形参: 函数中定义的变量，例如： def func(a,b) 中的ab</p>
+<p>实参: 调用函数时传入的具体值，例如： def func(1,2)中的1 2 </p>
+<p>\5. 函数如何返回值</p>
+<p>使用 <code>return</code> 语句返回结果。无 <code>return</code> 时默认返回 <code>None</code>。</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">add</span><span class="ss">(</span><span class="nv">x</span>,<span class="w"> </span><span class="nv">y</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">y</span><span class="w">  </span>#<span class="w"> </span>返回计算结果
+<span class="nb">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">add</span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span><span class="w">  </span>#<span class="w"> </span><span class="nb">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+
+<p>\6. 将99乘法表制作为函数，要求有2个参数，两个参数分别控制乘法表的最大乘数和最大被乘数。</p>
+<div class="codehilite"><pre><span></span><code>def multiplication_table(max_row, max_col):
+    for i in range(1, max_row + 1):
+        for j in range(1, max_col + 1):
+            print(f&quot;{i}×{j}={i*j}&quot;, end=&quot;\t&quot;)
+        print()  
+
+multiplication_table(3, 5) 
+</code></pre></div>
+
+<p>\7. input是如何使用的？试着使用input输出参数传递给99乘法表的函数</p>
+<div class="codehilite"><pre><span></span><code>def multiplication_table(max_row, max_col):
+    for i in range(1, max_row + 1):
+        for j in range(1, max_col + 1):
+            print(f&quot;{i}×{j}={i*j}&quot;, end=&quot;\t&quot;)
+        print()
+
+<span class="gh">#</span> 通过input获取参数
+rows = int(input(&quot;输入最大行数: &quot;))     # 用户输入转为整数
+cols = int(input(&quot;输入最大列数: &quot;))
+multiplication_table(rows, cols)
+
+输入最大行数: 2
+输入最大列数: 3
+1×1=1   1×2=2   1×3=3   
+2×1=2   2×2=4   2×3=6   
+</code></pre></div>
+
+<p>\8. 默认print会自动换行，如何让print不自动换行</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;不换行&quot;</span>,<span class="w"> </span><span class="k">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="ss">)</span><span class="w">  </span>
+<span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;继续输出&quot;</span><span class="ss">)</span><span class="w">        </span>
+</code></pre></div>
+
+<p>\9. 打印列表时，如何倒序打印，就是先输出字典最后一位，最后输出字典的第一位</p>
+<div class="codehilite"><pre><span></span><code><span class="s s-Atom">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s s-Atom">my_list</span><span class="p">[</span><span class="o">::-</span><span class="mi">1</span><span class="p">])</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">输出</span><span class="o">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<p>\10. 如何列表进行去重,使用set</p>
+<div class="codehilite"><pre><span></span><code>lst = [3, 1, 2, 1, 4]
+unique = list(set(lst))
+print(unique)
+</code></pre></div>
+
+<p>\11. 单个下划线是否可以作为变量名称，什么情况下会使用这种方式</p>
+<div class="codehilite"><pre><span></span><code>x, <span class="ge">_, y = (1, 2, 3)  # 忽略第二个值</span>
+<span class="ge">print(x, y)</span>
+<span class="ge">#临时变量</span>
+<span class="ge">for _</span> in range(3):
+    print(&quot;Hello&quot;)
+</code></pre></div>
+
+<p>\12. 比如列表为['小明',18,'BeiJing']，如何快速为每个元素单独设置变量名</p>
+<div class="codehilite"><pre><span></span><code>data = [&#39;小明&#39;, 18, &#39;BeiJing&#39;]
+name, age, city = data
+print(name,age)
+</code></pre></div>
+
+<p>\13. 什么是深拷贝，什么是浅拷贝，什么情况下使用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">特点</th>
+<th style="text-align: left;">使用场景</th>
+<th style="text-align: left;">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">浅拷贝</td>
+<td style="text-align: left;">只复制顶层对象（嵌套对象共享）</td>
+<td style="text-align: left;">简单对象修改</td>
+<td style="text-align: left;"><code>copy.copy()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">深拷贝</td>
+<td style="text-align: left;">递归复制所有嵌套对象</td>
+<td style="text-align: left;">需要完全独立副本的嵌套结构</td>
+<td style="text-align: left;"><code>copy.deepcopy()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">shallow</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shallow</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deep</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\14. 列表是有序的还是无需的</p>
+<p><strong>列表(List)</strong>：有序（元素按插入顺序存储）</p>
+<p>\15. 字典是有序的还是无需的</p>
+<ul>
+<li><strong>元组(Tuple)</strong>：有序</li>
+<li><strong>字典(Dict)</strong>：Python 3.7+ 有序（按插入顺序）</li>
+<li><strong>集合(Set)</strong>：无序</li>
+</ul>
+<p>\16. 集合是什么</p>
+<p>集合是 <strong>无序、不重复</strong> 元素的容器，用 <code>{}</code> 定义。用于去重和集合运算（交集、并集）</p>
+<div class="codehilite"><pre><span></span><code>s = {1, 2, 3}
+s.add(4)  # 增
+</code></pre></div>
+
+<p>\17. 列表、字典、集合、元组的区别是什么，做表格进行对比。在什么场景下使用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">可变性</th>
+<th style="text-align: left;">有序性</th>
+<th style="text-align: left;">重复元素</th>
+<th style="text-align: left;">使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">列表</td>
+<td style="text-align: left;">可变</td>
+<td style="text-align: left;">有序</td>
+<td style="text-align: left;">允许</td>
+<td style="text-align: left;">动态数据集合</td>
+</tr>
+<tr>
+<td style="text-align: left;">元组</td>
+<td style="text-align: left;">不可变</td>
+<td style="text-align: left;">有序</td>
+<td style="text-align: left;">允许</td>
+<td style="text-align: left;">常量数据（如坐标）</td>
+</tr>
+<tr>
+<td style="text-align: left;">字典</td>
+<td style="text-align: left;">可变</td>
+<td style="text-align: left;">有序*</td>
+<td style="text-align: left;">键不允许</td>
+<td style="text-align: left;">键值映射（如JSON数据）</td>
+</tr>
+<tr>
+<td style="text-align: left;">集合</td>
+<td style="text-align: left;">可变</td>
+<td style="text-align: left;">无序</td>
+<td style="text-align: left;">不允许</td>
+<td style="text-align: left;">去重/集合运算</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>*注：Python 3.7+ 字典有序</p>
+</blockquote>
+<p>\18. 列表、字典、集合、元组的增删改查，怎么操作</p>
+<h4 id="_4">列表操作</h4>
+<div class="codehilite"><pre><span></span><code>lst = [1, 2]
+lst.append(3)       # 增: [1, 2, 3]
+lst[1] = 20         # 改: [1, 20, 3]
+del lst[0]          # 删: [20, 3]
+print(lst[0])       # 查: 20
+</code></pre></div>
+
+<h4 id="_5">字典操作</h4>
+<div class="codehilite"><pre><span></span><code>d = {&quot;a&quot;: 1}
+d[&quot;b&quot;] = 2          # 增: {&quot;a&quot;:1, &quot;b&quot;:2}
+d[&quot;a&quot;] = 10         # 改: {&quot;a&quot;:10, &quot;b&quot;:2}
+del d[&quot;b&quot;]          # 删: {&quot;a&quot;:10}
+print(d.get(&quot;a&quot;))   # 查: 10
+</code></pre></div>
+
+<h4 id="_6">集合操作</h4>
+<div class="codehilite"><pre><span></span><code>s = {1, 2}
+s.add(3)            # 增: {1, 2, 3}
+s.remove(1)         # 删: {2, 3}
+# 集合元素不可直接修改，需先删后增
+print(2 in s)       # 查: True
+</code></pre></div>
+
+<h4 id="_7">元组操作</h4>
+<div class="codehilite"><pre><span></span><code>t = (1, 2)
+# 元组不可变！只能查询
+print(t[0])         # 查: 1
+</code></pre></div>
+
+<h3 id="_8">第五天</h3>
+<p>\1. 如何使用python创建文件，并写入内容</p>
+<div class="codehilite"><pre><span></span><code>with open(&#39;example.txt&#39;, &#39;w&#39;) as f:    #默认在当前路径
+    f.write(&quot;Hello, World!&quot;)
+</code></pre></div>
+
+<p>\2. 如何写入时先清空文件内容</p>
+<div class="codehilite"><pre><span></span><code># 使用 &#39;w&#39; 模式会自动清空文件
+with open(&#39;example.txt&#39;, &#39;w&#39;) as f:
+    f.write(&quot;New content&quot;)
+</code></pre></div>
+
+<p>\3. 如何写入时不清空内容，而是追加内容</p>
+<div class="codehilite"><pre><span></span><code>with open(&#39;example.txt&#39;, &#39;a&#39;) as f:    # a追加内容
+    f.write(&quot;\nAppended text&quot;)
+</code></pre></div>
+
+<p>\4. python中如何定义一个多行文本。</p>
+<div class="codehilite"><pre><span></span><code>multi_line_text = &quot;&quot;&quot;Line 1          #6个引号，双引号单引号都可以
+Line 2
+Line 3&quot;&quot;&quot;
+</code></pre></div>
+
+<p>\5. 如何替换文本中的字符串，比如把字符串aaabbcc中的aaa替换为xxx</p>
+<div class="codehilite"><pre><span></span><code>text = &quot;aaabbcc&quot;
+new_text = text.replace(&quot;aaa&quot;, &quot;xxx&quot;) #replace替换
+<span class="gh">#</span> 结果: &quot;xxxbbcc&quot;
+</code></pre></div>
+
+<p>\6. 如何读取一个文本文件</p>
+<div class="codehilite"><pre><span></span><code>with open(&#39;example.txt&#39;, &#39;r&#39;) as f:   #r只读
+    content = f.read()
+</code></pre></div>
+
+<p>\7. 如何将文本文件中的内容读取为列表，每一行是一个元素</p>
+<div class="codehilite"><pre><span></span><code>with open(&#39;example.txt&#39;, &#39;r&#39;) as f:
+    lines = f.readlines()  # 每行包含换行符
+</code></pre></div>
+
+<p>\8. 字符串类型的数字，如何转换为数字类型</p>
+<div class="codehilite"><pre><span></span><code>num_int = int(&quot;42&quot;)     # 整数
+num_float = float(&quot;3.14&quot;)  # 浮点数
+</code></pre></div>
+
+<p>\9. 如何把数字类型转换为字符串</p>
+<div class="codehilite"><pre><span></span><code>num_str = str(42)      # &quot;42&quot;
+float_str = str(3.14)  # &quot;3.14&quot;
+</code></pre></div>
+
+<p>\10. 同一个列表中可以存在不同类型的变量吗？其他编程语言是否可以</p>
+<div class="codehilite"><pre><span></span><code>mixed_list = [1, &quot;text&quot;, True, 3.14]  # Python允许
+<span class="gh">#</span> Java/C++等强类型语言通常不允许
+</code></pre></div>
+
+<p>\11. 什么是弱语言类型，什么是强语言类型，python属于哪种</p>
+<ul>
+<li><strong>强类型</strong>：变量类型固定（Python、Java）</li>
+<li><strong>弱类型</strong>：允许隐式类型转换（JavaScript、PHP）</li>
+<li><strong>Python</strong>：强类型 + 动态类型</li>
+</ul>
+<p>\12. 如何判断一个变量的类型是什么</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m m-Double">3.14</span>
+<span class="nx">print</span><span class="p">(</span><span class="k">type</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span><span class="w">  </span><span class="err">#</span><span class="nx">type即可打印变量类型</span><span class="err">，</span><span class="nx">浮点数</span>
+</code></pre></div>
+
+<p>\13. Python有哪些常用内置库，什么场景下使用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">库名</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>os</code></td>
+<td style="text-align: left;">操作系统交互</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sys</code></td>
+<td style="text-align: left;">系统参数操作</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>math</code></td>
+<td style="text-align: left;">数学运算</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>datetime</code></td>
+<td style="text-align: left;">日期时间处理</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>json</code></td>
+<td style="text-align: left;">JSON数据解析</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>re</code></td>
+<td style="text-align: left;">正则表达式</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>random</code></td>
+<td style="text-align: left;">随机数生成</td>
+</tr>
+</tbody>
+</table>
+<p>\14. 使用Python获取当前工作目录，切换目录，创建、删除、重命名目录</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>                <span class="c1"># 当前目录</span>
+<span class="c1">#手动新建test目录</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;./test&#39;</span><span class="p">)</span><span class="c1"># 切换目录</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">)</span>               <span class="c1"># 创建目录</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">,</span> <span class="s1">&#39;old_dir&#39;</span><span class="p">)</span>   <span class="c1"># 重命名</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;empty_dir&#39;</span><span class="p">)</span>             <span class="c1"># 删除空目录</span>
+<span class="c1">#根据需求注释</span>
+</code></pre></div>
+
+<p>\15. 使用Python获取环境变量，新增环境变量，修改环境变量，删除新增的环境变量。</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PATH&#39;</span><span class="p">))</span>     <span class="c1"># 获取变量</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NEW_VAR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>   <span class="c1"># 新增/修改</span>
+<span class="k">del</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NEW_VAR&#39;</span><span class="p">]</span>         <span class="c1"># 删除</span>
+<span class="c1"># 注意：修改仅影响当前进程</span>
+</code></pre></div>
+
+<p>\16. 使用Python输出一个随机数。输出一个长度为5的列表，每个元素都是一个随机数</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">random_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c1"># _ 占位符</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random_list</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\17. 输出一个5-100的随机数，要求为整数</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>  <span class="c1"># 包含5和100</span>
+</code></pre></div>
+
+<p>\18. 输出一个长度为10的随机数列表，按照从大到小的顺序对其排序</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">random_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">random_list</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">#加reverse排序</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\19. 输出一个长度为10的随机数列表，要求每个数都是7的倍数</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">rand_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="c1">#1-10的范围乘7，输出10个</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rand_list</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\20. 输出100个，0-9的随机数，并统计每个数字出现的次数</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>   <span class="c1"># counter是python的计数库</span>
+<span class="c1"># 生成100个0-9的随机整数</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="c1"># 统计频率</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1">#创建变量接收并且统计全部数据</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="p">):</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">counter</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="si">}</span><span class="s2">次&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="_9">第六天</h3>
+<p>\1. python有哪些常用的第三方库</p>
+<ul>
+<li><strong>数据处理</strong>：<code>NumPy</code>（数值计算）、<code>pandas</code>（数据分析）、<code>Matplotlib</code>（绘图）</li>
+<li><strong>网络请求</strong>：<code>Requests</code>（HTTP 请求）</li>
+<li><strong>爬虫/解析</strong>：<code>BeautifulSoup</code>（HTML/XML 解析）、<code>Scrapy</code>（爬虫框架）</li>
+<li><strong>AI/机器学习</strong>：<code>TensorFlow</code>、<code>PyTorch</code>、<code>scikit-learn</code></li>
+<li><strong>Web 开发</strong>：<code>Django</code>、<code>Flask</code>（Web 框架）</li>
+<li><strong>数据库</strong>：<code>SQLAlchemy</code>（ORM）、<code>pymysql</code>（MySQL 连接）</li>
+<li><strong>文件处理</strong>：<code>openpyxl</code>（Excel）、<code>Pillow</code>（图像处理）</li>
+</ul>
+<p>\2. 如何安装第三方库，并安装Requests库</p>
+<div class="codehilite"><pre><span></span><code>pip install 库名         #不能直接下载可以问ai用阿里云链接
+</code></pre></div>
+
+<p>\3. 什么是http请求，get和post有什么区别</p>
+<ul>
+<li>
+<p><strong>HTTP 请求</strong>：客户端（浏览器/程序）向服务器发送数据并获取响应的协议。</p>
+</li>
+<li>
+<p><strong>GET vs POST</strong>：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>特点</strong></th>
+<th style="text-align: left;">GET</th>
+<th style="text-align: left;">POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>数据位置</strong></td>
+<td style="text-align: left;">URL 参数（明文）</td>
+<td style="text-align: left;">请求体（隐藏）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>安全性</strong></td>
+<td style="text-align: left;">较低（数据暴露在 URL 中）</td>
+<td style="text-align: left;">较高</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据大小</strong></td>
+<td style="text-align: left;">有限（受 URL 长度限制）</td>
+<td style="text-align: left;">支持大文件（如上传）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>用途</strong></td>
+<td style="text-align: left;">获取数据（搜索、翻页）</td>
+<td style="text-align: left;">提交数据（登录、表单）</td>
+</tr>
+</tbody>
+</table>
+<p>\4. 什么是API接口与直接访问页面有什么区别</p>
+<ul>
+<li>
+<p><strong>API 接口</strong>：服务器提供的<strong>结构化数据通道</strong>（如返回 JSON/XML），供程序调用。</p>
+</li>
+<li>
+<p><strong>与访问页面的区别</strong>：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>对比项</strong></th>
+<th style="text-align: left;">API 接口</th>
+<th style="text-align: left;">直接访问页面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>返回内容</strong></td>
+<td style="text-align: left;">结构化数据（JSON/XML）</td>
+<td style="text-align: left;">HTML（渲染后用户可见）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>使用者</strong></td>
+<td style="text-align: left;">程序（如 Python 脚本）</td>
+<td style="text-align: left;">浏览器</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>目的</strong></td>
+<td style="text-align: left;">数据交互（如获取天气信息）</td>
+<td style="text-align: left;">页面展示（用户直接阅读）</td>
+</tr>
+</tbody>
+</table>
+<p>\5. 如何使用Requests访问百度首页</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.baidu.com&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>  <span class="c1"># 状态码（200 表示成功）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span>   <span class="c1"># 打印前200字符（HTML内容）</span>
+</code></pre></div>
+
+<p>\6. 什么是json，与字典有什么区别</p>
+<ul>
+<li><strong>JSON</strong>：轻量级<strong>数据交换格式</strong>（字符串），跨语言通用。</li>
+</ul>
+<p><code>{"name": "Alice", "age": 25}</code></p>
+<ul>
+<li><strong>Python 字典</strong>：内存中的<strong>数据结构</strong>（键值对）。</li>
+</ul>
+<p><code>{"name": "Alice", "age": 25}  # Python 对象</code></p>
+<ul>
+<li><strong>区别</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>JSON</strong></th>
+<th style="text-align: left;"><strong>Python 字典</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">字符串格式（需解析）</td>
+<td style="text-align: left;">内存对象（可直接操作）</td>
+</tr>
+<tr>
+<td style="text-align: left;">键必须用双引号 <code>""</code></td>
+<td style="text-align: left;">键可用单/双引号</td>
+</tr>
+<tr>
+<td style="text-align: left;">不支持注释</td>
+<td style="text-align: left;">支持注释</td>
+</tr>
+</tbody>
+</table>
+<p>\7. 什么情况下使用json</p>
+<ul>
+<li><strong>数据传输</strong>：API 接口返回数据（如天气 API）。</li>
+<li><strong>配置文件</strong>：如 <code>config.json</code>。</li>
+<li><strong>存储数据</strong>：NoSQL 数据库（如 MongoDB）。</li>
+<li><strong>跨语言交互</strong>：Python 和 JavaScript 通信。</li>
+</ul>
+<p>\8. 在json之前是使用什么格式来进行数据交互</p>
+<ul>
+<li><strong>XML</strong>（可扩展标记语言）：</li>
+</ul>
+<p><code>xml
+  &lt;user&gt;
+    &lt;name&gt;Alice&lt;/name&gt;
+    &lt;age&gt;25&lt;/age&gt;
+  &lt;/user&gt;</code></p>
+<ul>
+<li><strong>缺点</strong>：标签冗余、解析复杂、文件体积大。</li>
+</ul>
+<p>\9. 什么是时间戳</p>
+<ul>
+<li><strong>定义</strong>：从 <strong>1970年1月1日 00:00:00 UTC</strong> 开始计算的秒数（或毫秒）。</li>
+<li><strong>示例</strong>：<code>1719196800</code> 表示 2024-06-24 12:00:00 UTC。</li>
+</ul>
+<p>\10. 如何使用Python输出当前的时间戳</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># 秒级时间戳</span>
+<span class="n">timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>  <span class="c1"># 输出：1719196800（示例值）</span>
+
+<span class="c1"># 毫秒级时间戳</span>
+<span class="n">timestamp_ms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timestamp_ms</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\11. 如何输出当前的时间</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span> 
+</code></pre></div>
+
+<p>\12. 如何对时间进行格式化，比如只输出“年-月-日 时:分”</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">formatted</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">formatted</span><span class="p">)</span>  
+</code></pre></div>
+
+<p>\13. 使用Python获取2小时前的时间，2小时后的时间，3天前的日期和4天后的日期</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="c1"># 2小时前</span>
+<span class="n">two_hours_ago</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 2小时后</span>
+<span class="n">two_hours_later</span> <span class="o">=</span> <span class="n">now</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 3天前</span>
+<span class="n">three_days_ago</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># 4天后</span>
+<span class="n">four_days_later</span> <span class="o">=</span> <span class="n">now</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">two_hours_ago</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">two_hours_later</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">three_days_ago</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">four_days_later</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>\14. 什么是时区，我国是哪个时区</p>
+<ul>
+<li><strong>时区</strong>：地球划分的<strong>时间区域</strong>（每 15° 经度差 1 小时）。</li>
+<li><strong>中国时区</strong>：<code>UTC+8</code>（东八区，北京时间）。</li>
+</ul>
+<p>\15. 时区对时间戳有影响吗</p>
+<p><strong>没有影响</strong>！
+时间戳是 <strong>UTC 基准的绝对秒数</strong>，全球统一。
+时区只影响<strong>本地时间的显示</strong>（如 <code>1719196800</code> 在 UTC+8 显示为 08:00，在 UTC+0 显示为 00:00）</p>
+<p>\16. 时间戳如何转换为对应时区的时间，要如何表示不同时区的时间</p>
+<div class="codehilite"><pre><span></span><code><span class="n">current_timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">current_timestamp</span><span class="p">)</span>
+<span class="c1"># 使用当前时间戳（例如：2025年6月24日 21:37:00）</span>
+<span class="n">timestamp</span> <span class="o">=</span> <span class="n">current_timestamp</span>  <span class="c1"># 替换为你想表示的实际时间戳</span>
+
+<span class="c1"># 转换为 UTC+8 时间（上海）</span>
+<span class="n">utc8_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;Asia/Shanghai&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UTC+8 时间:&quot;</span><span class="p">,</span> <span class="n">utc8_time</span><span class="p">)</span>
+
+<span class="c1"># 转换为 纽约时间（UTC-4，注意夏令时影响）</span>
+<span class="n">ny_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;America/New_York&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;纽约时间:&quot;</span><span class="p">,</span> <span class="n">ny_time</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\17. Linux系统中如何运行Python脚本</p>
+<div class="codehilite"><pre><span></span><code># 方法1：直接执行（需脚本有可执行权限）
+chmod +x script.py
+./script.py
+
+# 方法2：用 python 解释器
+python3 script.py
+</code></pre></div>
+
+<p>\18. Python脚本中如何调用系统命令，比如在Linux下调用pwd、ls等命令</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># 方法1：os.system（简单调用）</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;ls -l&quot;</span><span class="p">)</span>
+
+<span class="c1"># 方法2：subprocess（推荐，可获取输出）</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>  <span class="c1"># 打印命令输出</span>
+</code></pre></div>
+
+<p>\19. 如何使用Python遍历某个目录下（包括子目录）都有哪些文件</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/etc&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\20. Windows下的路径与Linux下的路径有什么区别，什么是斜线，什么是反斜线</p>
+<ul>
+<li>
+<p><strong>Windows 路径</strong>：
+  使用反斜线 <code>\</code>（需转义为 <code>\\</code> 或使用原始字符串 <code>r"C:\Users"</code>）。
+  示例：<code>C:\Users\Alice\file.txt</code></p>
+</li>
+<li>
+<p><strong>Linux 路径</strong>：
+  使用斜线 <code>/</code>。
+  示例：<code>/home/alice/file.txt</code></p>
+</li>
+<li>
+<p><strong>跨平台建议</strong>：
+  使用 <code>os.path.join()</code> 自动处理：</p>
+</li>
+</ul>
+<p><code>python
+  import os
+  path = os.path.join("folder", "subfolder", "file.txt")  # 自动适配系统</code></p>
+<h3 id="_10">第七天</h3>
+<ol>
+<li>什么是异常，如何捕获处理异常，比如捕获“1除以0”的异常    </li>
+</ol>
+<p><code>python
+   try:
+       result = 1 / 0  # 触发ZeroDivisionError
+   except ZeroDivisionError as e:
+       print(f"捕获异常: {e}")</code></p>
+<ol>
+<li>如何自定义异常，自己主动抛出异常并捕获，比如定义一个列表，随机添加几个数字元素，当元素的总值高于某个值时，抛出异常。</li>
+</ol>
+<p><code>class TotalExceededError(Exception):
+       """当列表总和超过阈值时抛出"""
+       pass
+   import random
+   my_list = []
+   threshold = 50
+   try:
+       for _ in range(5):
+           num = random.randint(1, 20)
+           my_list.append(num)
+           if sum(my_list) &gt; threshold:
+               raise TotalExceededError(f"总和超过{threshold} (当前: {sum(my_list)})")
+   except TotalExceededError as e:
+       print(f"捕获自定义异常: {e}")
+       # 处理逻辑，如清除列表
+       my_list.clear()</code></p>
+<ol>
+<li>将一个字典保存为json文件</li>
+</ol>
+<p><code>import json
+   data = {"name": "Alice", "age": 30, "hobbies": ["reading", "hiking"]}
+   with open("data.json", "w") as f:
+       json.dump(data, f, indent=4)  # indent美化格式</code></p>
+<ol>
+<li>读取一个json文件为字典格式</li>
+</ol>
+<p><code>python
+   import json
+   with open("data.json", "r") as f:
+       loaded_data = json.load(f)
+   print(type(loaded_data))</code></p>
+<ol>
+<li>如何创建一个csv文件</li>
+</ol>
+<p><code>python
+   import csv
+   headers = ["Name", "Age", "City"]
+   rows = [
+       ["Alice", 30, "New York"],
+       ["Bob", 25, "London"],
+       ["Charlie", 35, "Paris"]
+   ]
+   with open("data.csv", "w", newline="") as f:
+       writer = csv.writer(f)
+       writer.writerow(headers)
+       writer.writerows(rows)</code></p>
+<ol>
+<li>
+<p>什么是序列化和反序列化</p>
+</li>
+<li>
+<p><strong>序列化</strong>：将对象转换为可存储/传输的格式（如JSON、二进制）</p>
+</li>
+<li>
+<p><strong>反序列化</strong>：将存储格式转换回原始对象</p>
+</li>
+<li>
+<p>Python如何将一个对象序列化为一个文件。如何读取此文件并反序列化为对象。</p>
+</li>
+</ol>
+<p>```python
+   import pickle</p>
+<p>class User:
+       def <strong>init</strong>(self, name, level):
+           self.name = name
+           self.level = level</p>
+<p># 序列化到文件
+   user = User("Alice", 5)
+   with open("user.pkl", "wb") as f:
+       pickle.dump(user, f)</p>
+<p># 从文件反序列化
+   with open("user.pkl", "rb") as f:
+       loaded_user = pickle.load(f)
+   print(loaded_user.name)  # Alice
+   ```</p>
+<ol>
+<li>xml格式是什么，python如何读取解析xml文件
+  ```xml
+  from xml.etree import ElementTree as ET</li>
+</ol>
+<p>xml_data = '''<?xml version='1.0' encoding='utf-8'?>
+  <library>
+  <book>
+  <title>Python编程入门</title>
+  <author>张三</author>
+  <year>2020</year>
+  </book>
+  <book>
+  <title>深入学习Python</title>
+  <author>李四</author>
+  <author>王五</author>
+  <year>2021</year>
+  </book>
+  </library>'''</p>
+<p>root = ET.fromstring(xml_data)
+  for book in root.findall('book'):
+      title = book.find('title').text
+      authors = [a.text for a in book.findall('author')]
+      year = book.find('year').text
+      print(f"书名: {title}, 作者: {authors}, 年份: {year}")
+  ```</p>
+<p>9.读取上面的xml，转换为json格式，并保存为文件book.json</p>
+<p>```python
+  import json
+  from xml.etree import ElementTree as ET
+  xml_data = '''<?xml version='1.0' encoding='utf-8'?>
+  <library>
+  <book>
+  <title>Python编程入门</title>
+  <author>张三</author>
+  <year>2020</year>
+  </book>
+  <book>
+  <title>深入学习Python</title>
+  <author>李四</author>
+  <author>王五</author>
+  <year>2021</year>
+  </book>
+  </library>'''
+  def parse_books(xml_str):
+      root = ET.fromstring(xml_str)
+      books = []
+      for book in root.findall('book'):
+          book_data = {
+              "title": book.find('title').text,
+              "author": [a.text for a in book.findall('author')],
+              "year": int(book.find('year').text)
+          }
+          # 单作者转为字符串
+          if len(book_data["author"]) == 1:
+              book_data["author"] = book_data["author"][0]
+          books.append(book_data)
+      return {"library": {"book": books}}</p>
+<p>json_data = parse_books(xml_data)
+  with open("book.json", "w", encoding="utf-8") as f:
+      json.dump(json_data, f, ensure_ascii=False, indent=2)
+  ```</p>
+<p>10.读取book.json文件，转为xml格式，并保存为文件book.xml</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xml.etree</span><span class="w"> </span><span class="kn">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+<span class="n">xml_data</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<span class="s1">&lt;library&gt;</span>
+<span class="s1">&lt;book&gt;</span>
+<span class="s1">&lt;title&gt;Python编程入门&lt;/title&gt;</span>
+<span class="s1">&lt;author&gt;张三&lt;/author&gt;</span>
+<span class="s1">&lt;year&gt;2020&lt;/year&gt;</span>
+<span class="s1">&lt;/book&gt;</span>
+<span class="s1">&lt;book&gt;</span>
+<span class="s1">&lt;title&gt;深入学习Python&lt;/title&gt;</span>
+<span class="s1">&lt;author&gt;李四&lt;/author&gt;</span>
+<span class="s1">&lt;author&gt;王五&lt;/author&gt;</span>
+<span class="s1">&lt;year&gt;2021&lt;/year&gt;</span>
+<span class="s1">&lt;/book&gt;</span>
+<span class="s1">&lt;/library&gt;&#39;&#39;&#39;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">json_to_xml</span><span class="p">(</span><span class="n">json_data</span><span class="p">):</span>
+    <span class="n">library</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;library&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">[</span><span class="s2">&quot;library&quot;</span><span class="p">][</span><span class="s2">&quot;book&quot;</span><span class="p">]:</span>
+        <span class="n">book_elem</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">)</span>
+        <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">book_elem</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">book</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+
+        <span class="c1"># 处理作者（字符串或列表）</span>
+        <span class="n">authors</span> <span class="o">=</span> <span class="n">book</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">authors</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">book_elem</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">authors</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+                <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">book_elem</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">author</span>
+
+        <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">book_elem</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">])</span>
+
+    <span class="c1"># 添加XML声明</span>
+    <span class="k">return</span> <span class="s1">&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;unicode&quot;</span><span class="p">)</span>
+
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;book.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">xml_output</span> <span class="o">=</span> <span class="n">json_to_xml</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;book.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xml_output</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="_11">第八天</h3>
+<p>\1. Python有哪些库可以操作Mysql</p>
+<p>Python 中常用的用于操作 MySQL 的库有：</p>
+<table>
+<thead>
+<tr>
+<th>库名</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mysql-connector-python</code></td>
+<td>官方 MySQL 提供的驱动器，无需第三方依赖</td>
+</tr>
+<tr>
+<td><code>pymysql</code></td>
+<td>纯 Python 实现的 MySQL 客户端，轻量易用</td>
+</tr>
+<tr>
+<td><code>SQLAlchemy</code></td>
+<td>ORM 工具，支持多种数据库，包括 MySQL</td>
+</tr>
+<tr>
+<td><code>peewee</code></td>
+<td>轻量级 ORM，适合小型项目</td>
+</tr>
+<tr>
+<td><code>PyMySQLPool</code></td>
+<td>支持连接池的 PyMySQL 封装（非标准）</td>
+</tr>
+</tbody>
+</table>
+<p>\2. 安装一个Mysql，创建一个库pydb，作为本次练习使用的库</p>
+<p>rocky linux 9  安装mysql</p>
+<p>yum install -y mysql   mysql-server     mysql是客户端  mysql server是服务端</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">pydb</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+<span class="k">USE</span><span class="w"> </span><span class="n">pydb</span><span class="p">;</span>
+</code></pre></div>
+
+<p>\3. 安装Faker库，并说明此库是干啥用的，什么场景下使用</p>
+<p>安装python</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">yum</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span><span class="w"> </span><span class="nx">python3</span><span class="w"> </span><span class="nx">python3</span><span class="o">-</span><span class="nx">pip</span>
+<span class="nx">pip3</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">global</span><span class="p">.</span><span class="nx">index</span><span class="o">-</span><span class="nx">url</span><span class="w"> </span><span class="nx">https</span><span class="p">:</span><span class="c1">//mirrors.aliyun.com/pypi/simple/  #设置pip加速地址为阿里云</span>
+<span class="nx">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">faker</span>
+</code></pre></div>
+
+<p><strong>Faker</strong> 是一个用于生成伪造数据的 Python 库，常用于：</p>
+<ul>
+<li>测试环境填充假数据</li>
+<li>开发时模拟用户数据</li>
+<li>构造测试用例或演示数据</li>
+<li>隐私保护中替代真实数据</li>
+</ul>
+<p>例如可生成姓名、地址、电话号码、邮箱、日期等信息。</p>
+<p>\4. 使用for循环调用Faker库，生成10条不重复的中文数据，每条数据中，包含姓名、性别、生日、地址、邮箱、手机号。</p>
+<p>现在使用rocky linux 9 下的python 和数据库</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">faker</span><span class="w"> </span><span class="kn">import</span> <span class="n">Faker</span>
+
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">(</span><span class="s1">&#39;zh_CN&#39;</span><span class="p">)</span>  <span class="c1"># 设置为中文环境</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span>
+        <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">random_element</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">)),</span>
+        <span class="s2">&quot;birthday&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">date_between</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;-30y&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;today&#39;</span><span class="p">),</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">(),</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">(),</span>
+        <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="c1"># 打印结果</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\5. 创建一个数据表，id为主键自增、其他内容有姓名、性别、生日、地址、邮箱、手机号</p>
+<div class="codehilite"><pre><span></span><code><span class="n">USE</span> <span class="n">pydb</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">people</span> <span class="p">(</span>
+    <span class="nb">id</span> <span class="n">INT</span> <span class="n">AUTO_INCREMENT</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+    <span class="n">name</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">gender</span> <span class="n">CHAR</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">birthday</span> <span class="n">DATE</span><span class="p">,</span>
+    <span class="n">address</span> <span class="n">TEXT</span><span class="p">,</span>
+    <span class="n">email</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+    <span class="n">phone</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+
+<p>\6. 使用python中的faker生成随机数据，在上面创建的表中插入10000条数据。</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>               
+<span class="kn">from</span><span class="w"> </span><span class="nn">faker</span><span class="w"> </span><span class="kn">import</span> <span class="n">Faker</span>
+
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">(</span><span class="s1">&#39;zh_CN&#39;</span><span class="p">)</span>
+
+<span class="c1"># 连接数据库</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;admin123.&#39;</span><span class="p">,</span>  <span class="c1"># 替换为你自己的密码</span>
+    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;pydb&#39;</span><span class="p">,</span>
+    <span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8mb4&#39;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># 插入数据</span>
+<span class="n">insert_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">INSERT INTO people (name, gender, birthday, address, email, phone)</span>
+<span class="s2">VALUES (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_sql</span><span class="p">,</span> <span class="p">(</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">random_element</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">)),</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">date_between</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;-80y&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">&#39;-18y&#39;</span><span class="p">),</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">(),</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">(),</span>
+        <span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>
+    <span class="p">))</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;成功插入 10000 条数据&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\7. 使用python读取数据库中的这些人的信息，并计算这10000人的平均年龄以及最年龄最大的比最小的大几岁。</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># python3 batian7.py </span>
+<span class="n">平均年龄</span><span class="err">：</span><span class="mf">48.69</span> <span class="n">岁</span>
+<span class="n">年龄最大的比最小的大</span> <span class="mi">62</span> <span class="n">岁</span>
+
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># cat batian7.py </span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_age</span><span class="p">(</span><span class="n">birthdate</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">birthdate</span><span class="o">.</span><span class="n">year</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;admin123.&#39;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;pydb&#39;</span><span class="p">,</span>
+    <span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8mb4&#39;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT birthday FROM people&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+
+<span class="n">avg_age</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="n">max_min_diff</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;平均年龄：</span><span class="si">{</span><span class="n">avg_age</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> 岁&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;年龄最大的比最小的大 </span><span class="si">{</span><span class="n">max_min_diff</span><span class="si">}</span><span class="s2"> 岁&quot;</span><span class="p">)</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<p>\8. 使用python统计这10000人中姓氏最多的前5位的具体数量（可以不考虑复姓）</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># python3 batian8.py </span>
+<span class="n">姓氏前五名</span><span class="err">：</span>
+<span class="n">李</span><span class="p">:</span> <span class="mi">711</span>
+<span class="n">张</span><span class="p">:</span> <span class="mi">678</span>
+<span class="n">王</span><span class="p">:</span> <span class="mi">652</span>
+<span class="n">刘</span><span class="p">:</span> <span class="mi">530</span>
+<span class="n">陈</span><span class="p">:</span> <span class="mi">477</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># cat batian8.py </span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;admin123.&#39;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;pydb&#39;</span><span class="p">,</span>
+    <span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8mb4&#39;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name FROM people&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>  <span class="c1"># 取第一个字符作为姓</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">first_names</span><span class="p">)</span>
+
+<span class="n">top_5</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;姓氏前五名：&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">top_5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\9. 统计这10000人的属相，只统计数量，以json格式体现，比如
+{
+"鼠":1224,
+...
+"猪":968
+}</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># python3 batian9.py </span>
+<span class="p">{</span>
+  <span class="s2">&quot;鸡&quot;</span><span class="p">:</span> <span class="mi">893</span><span class="p">,</span>
+  <span class="s2">&quot;蛇&quot;</span><span class="p">:</span> <span class="mi">820</span><span class="p">,</span>
+  <span class="s2">&quot;虎&quot;</span><span class="p">:</span> <span class="mi">806</span><span class="p">,</span>
+  <span class="s2">&quot;牛&quot;</span><span class="p">:</span> <span class="mi">792</span><span class="p">,</span>
+  <span class="s2">&quot;马&quot;</span><span class="p">:</span> <span class="mi">772</span><span class="p">,</span>
+  <span class="s2">&quot;狗&quot;</span><span class="p">:</span> <span class="mi">1033</span><span class="p">,</span>
+  <span class="s2">&quot;猪&quot;</span><span class="p">:</span> <span class="mi">890</span><span class="p">,</span>
+  <span class="s2">&quot;鼠&quot;</span><span class="p">:</span> <span class="mi">781</span><span class="p">,</span>
+  <span class="s2">&quot;羊&quot;</span><span class="p">:</span> <span class="mi">775</span><span class="p">,</span>
+  <span class="s2">&quot;兔&quot;</span><span class="p">:</span> <span class="mi">805</span><span class="p">,</span>
+  <span class="s2">&quot;龙&quot;</span><span class="p">:</span> <span class="mi">842</span><span class="p">,</span>
+  <span class="s2">&quot;猴&quot;</span><span class="p">:</span> <span class="mi">791</span>
+<span class="p">}</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">python</span><span class="p">]</span><span class="c1"># cat batian9.py </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">zodiac_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;鼠&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;牛&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;虎&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;兔&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;龙&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;蛇&#39;</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;马&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;羊&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;猴&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;鸡&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;狗&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;猪&#39;</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_zodiac</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">zodiac_dict</span><span class="p">[(</span><span class="n">year</span> <span class="o">-</span> <span class="mi">2020</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;admin123.&#39;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;pydb&#39;</span><span class="p">,</span>
+    <span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8mb4&#39;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT birthday FROM people&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="n">zodiac_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="c1"># 方法1：直接使用date对象的year属性（推荐）</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">year</span>
+
+    <span class="c1"># 或者方法2：如果需要先转为字符串再解析（不推荐）</span>
+    <span class="c1"># birth_str = row[0].strftime(&#39;%Y-%m-%d&#39;)</span>
+    <span class="c1"># year = datetime.strptime(birth_str, &#39;%Y-%m-%d&#39;).year</span>
+
+    <span class="n">animal</span> <span class="o">=</span> <span class="n">get_zodiac</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">zodiac_counter</span><span class="p">[</span><span class="n">animal</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># 输出 JSON</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">zodiac_counter</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># 关闭连接</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h3 id="_12">第九天</h3>
+<p>\1. 有哪些常用的网页状态码</p>
+<ol>
+<li>常用的网页状态码</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态码</th>
+<th style="text-align: left;">名称</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">OK</td>
+<td style="text-align: left;">请求成功</td>
+</tr>
+<tr>
+<td style="text-align: left;">201</td>
+<td style="text-align: left;">Created</td>
+<td style="text-align: left;">资源创建成功</td>
+</tr>
+<tr>
+<td style="text-align: left;">301</td>
+<td style="text-align: left;">Moved Permanently</td>
+<td style="text-align: left;">永久重定向</td>
+</tr>
+<tr>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">Found</td>
+<td style="text-align: left;">临时重定向</td>
+</tr>
+<tr>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">Bad Request</td>
+<td style="text-align: left;">客户端请求错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">401</td>
+<td style="text-align: left;">Unauthorized</td>
+<td style="text-align: left;">未授权</td>
+</tr>
+<tr>
+<td style="text-align: left;">403</td>
+<td style="text-align: left;">Forbidden</td>
+<td style="text-align: left;">禁止访问</td>
+</tr>
+<tr>
+<td style="text-align: left;">404</td>
+<td style="text-align: left;">Not Found</td>
+<td style="text-align: left;">资源不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">Internal Server Error</td>
+<td style="text-align: left;">服务器内部错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">502</td>
+<td style="text-align: left;">Bad Gateway</td>
+<td style="text-align: left;">网关错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">503</td>
+<td style="text-align: left;">Service Unavailable</td>
+<td style="text-align: left;">服务不可用</td>
+</tr>
+</tbody>
+</table>
+<p>\2. 2xx、3xx、4xx、5xx的主要区别是什么</p>
+<p>. 状态码分类区别</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">分类</th>
+<th style="text-align: left;">含义</th>
+<th style="text-align: left;">典型状态码</th>
+<th style="text-align: left;">使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2xx</td>
+<td style="text-align: left;">成功</td>
+<td style="text-align: left;">200, 201</td>
+<td style="text-align: left;">请求被服务器成功处理</td>
+</tr>
+<tr>
+<td style="text-align: left;">3xx</td>
+<td style="text-align: left;">重定向</td>
+<td style="text-align: left;">301, 302</td>
+<td style="text-align: left;">需要客户端进一步操作</td>
+</tr>
+<tr>
+<td style="text-align: left;">4xx</td>
+<td style="text-align: left;">客户端错误</td>
+<td style="text-align: left;">400, 404</td>
+<td style="text-align: left;">客户端请求有问题</td>
+</tr>
+<tr>
+<td style="text-align: left;">5xx</td>
+<td style="text-align: left;">服务器错误</td>
+<td style="text-align: left;">500, 503</td>
+<td style="text-align: left;">服务器处理请求失败</td>
+</tr>
+</tbody>
+</table>
+<p>\3. 使用request库调用https://httpbin.org/get接口</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># python3 jiutian3.py </span>
+<span class="n">状态码</span><span class="p">:</span> <span class="mi">200</span>
+<span class="n">响应内容</span><span class="p">:</span>
+<span class="p">{</span>
+  <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">{},</span> 
+  <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;*/*&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;httpbin.org&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;python-requests/2.32.4&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;X-Amzn-Trace-Id&quot;</span><span class="p">:</span> <span class="s2">&quot;Root=1-685f9fd8-5abdc5285cda1ec349f51965&quot;</span>
+  <span class="p">},</span> 
+  <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;120.82.86.178&quot;</span><span class="p">,</span> 
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://httpbin.org/get&quot;</span>
+<span class="p">}</span>
+
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># cat jiutian3.py </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;状态码: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;响应内容:</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\4. 以get方式访问的接口是否可以直接使用浏览器访问</p>
+<p><strong>可以</strong>直接在浏览器中访问GET接口。
+在浏览器地址栏输入：<code>https://httpbin.org/get</code> 即可查看响应结果。</p>
+<p>\5. 使用request库调用https://httpbin.org/post接口，并提交表单
+{'username': 'test', 'password': '123456'}</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># python3 jiutian5.py </span>
+<span class="n">状态码</span><span class="p">:</span> <span class="mi">200</span>
+<span class="n">响应内容</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;args&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;123456&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">},</span> <span class="s1">&#39;headers&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;*/*&#39;</span><span class="p">,</span> <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Length&#39;</span><span class="p">:</span> <span class="s1">&#39;29&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span> <span class="s1">&#39;Host&#39;</span><span class="p">:</span> <span class="s1">&#39;httpbin.org&#39;</span><span class="p">,</span> <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;python-requests/2.32.4&#39;</span><span class="p">,</span> <span class="s1">&#39;X-Amzn-Trace-Id&#39;</span><span class="p">:</span> <span class="s1">&#39;Root=1-685fa04f-2e0adc3067604c02109d44ca&#39;</span><span class="p">},</span> <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="s1">&#39;120.82.86.200&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://httpbin.org/post&#39;</span><span class="p">}</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># cat jiutian5.py </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;123456&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/post&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;状态码: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;响应内容:</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\6. 什么是表单</p>
+<p>表单(Form)是HTML中用于收集用户输入数据的元素集合，包含：</p>
+<ul>
+<li>输入字段（文本框、密码框、单选按钮等）</li>
+<li>提交按钮</li>
+<li>数据通过HTTP请求发送到服务器</li>
+</ul>
+<p>\7. post提交数据时除了提交表单外还可以提交什么内容，最常用的是哪个</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">数据类型</th>
+<th style="text-align: left;">Content-Type</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">JSON</td>
+<td style="text-align: left;">application/json</td>
+<td style="text-align: left;">JSON格式数据</td>
+<td style="text-align: left;">API接口交互</td>
+</tr>
+<tr>
+<td style="text-align: left;">文件</td>
+<td style="text-align: left;">multipart/form-data</td>
+<td style="text-align: left;">文件上传</td>
+<td style="text-align: left;">文件传输</td>
+</tr>
+<tr>
+<td style="text-align: left;">XML</td>
+<td style="text-align: left;">application/xml</td>
+<td style="text-align: left;">XML格式数据</td>
+<td style="text-align: left;">传统系统集成</td>
+</tr>
+<tr>
+<td style="text-align: left;">二进制</td>
+<td style="text-align: left;">application/octet-stream</td>
+<td style="text-align: left;">原始二进制数据</td>
+<td style="text-align: left;">流媒体传输</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最常用的是JSON</strong>，特别在RESTful API中。</p>
+<p>\8. post可以同时提交表单和json吗</p>
+<p><strong>不能</strong>同时提交。HTTP请求只能有一个主体(body)，但可以：</p>
+<ol>
+<li>将JSON作为表单的一个字段值</li>
+<li>使用multipart/form-data混合不同类型数据</li>
+</ol>
+<p>\9. 表单提交的内容跟json有什么区别呢，为什么不全部使用json</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">表单</th>
+<th style="text-align: left;">JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">编码</td>
+<td style="text-align: left;">URL编码或multipart</td>
+<td style="text-align: left;">UTF-8字符串</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据结构</td>
+<td style="text-align: left;">扁平键值对</td>
+<td style="text-align: left;">支持复杂嵌套结构</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据类型</td>
+<td style="text-align: left;">有限类型</td>
+<td style="text-align: left;">完整数据类型支持</td>
+</tr>
+<tr>
+<td style="text-align: left;">可读性</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">良好</td>
+</tr>
+<tr>
+<td style="text-align: left;">文件支持</td>
+<td style="text-align: left;">原生支持</td>
+<td style="text-align: left;">需要Base64编码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不全部使用JSON的原因</strong>：</p>
+<ol>
+<li>老系统兼容性问题</li>
+<li>文件上传效率低（需要Base64编码）</li>
+<li>简单场景过度设计</li>
+<li>浏览器表单默认行为支持</li>
+</ol>
+<p>\10. 使用request库调用https://httpbin.org/post接口，提交一个json内容</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># python3 jiutian10.py </span>
+<span class="n">状态码</span><span class="p">:</span> <span class="mi">200</span>
+<span class="n">响应内容</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;args&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;hobbies&quot;: [&quot;reading&quot;, &quot;travel&quot;]}&#39;</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;headers&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;*/*&#39;</span><span class="p">,</span> <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Length&#39;</span><span class="p">:</span> <span class="s1">&#39;62&#39;</span><span class="p">,</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span> <span class="s1">&#39;Host&#39;</span><span class="p">:</span> <span class="s1">&#39;httpbin.org&#39;</span><span class="p">,</span> <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;python-requests/2.32.4&#39;</span><span class="p">,</span> <span class="s1">&#39;X-Amzn-Trace-Id&#39;</span><span class="p">:</span> <span class="s1">&#39;Root=1-685fa119-3064f7e959bc943b080d6f31&#39;</span><span class="p">},</span> <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">],</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">},</span> <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="s1">&#39;120.82.86.224&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://httpbin.org/post&#39;</span><span class="p">}</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@rocky1</span> <span class="n">jiutian</span><span class="p">]</span><span class="c1"># cat jiutian10.py </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">]}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s1">&#39;https://httpbin.org/post&#39;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_data</span><span class="p">),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;状态码: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;响应内容:</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>\11. 什么是request，什么是response</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">概念</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">组成部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Request</td>
+<td style="text-align: left;">客户端向服务器发送的请求</td>
+<td style="text-align: left;">请求行、请求头、请求体</td>
+</tr>
+<tr>
+<td style="text-align: left;">Response</td>
+<td style="text-align: left;">服务器对请求的响应</td>
+<td style="text-align: left;">状态行、响应头、响应体</td>
+</tr>
+</tbody>
+</table>
+<p>\12. 什么是请求头，有什么作用</p>
+<p>请求头(Request Headers)是HTTP请求的元数据，主要作用：</p>
+<ol>
+<li><strong>内容协商</strong>：Accept, Accept-Language</li>
+<li><strong>认证</strong>：Authorization</li>
+<li><strong>缓存控制</strong>：Cache-Control</li>
+<li><strong>客户端标识</strong>：User-Agent</li>
+<li><strong>Cookie管理</strong>：Cookie</li>
+<li><strong>内容类型声明</strong>：Content-Type</li>
+</ol>
+<p>\13. 什么是Cookie、什么是Session、什么是Token</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">概念</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">存储位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cookie</td>
+<td style="text-align: left;">客户端存储的小型数据</td>
+<td style="text-align: left;">浏览器</td>
+</tr>
+<tr>
+<td style="text-align: left;">Session</td>
+<td style="text-align: left;">服务器存储的用户状态</td>
+<td style="text-align: left;">服务器</td>
+</tr>
+<tr>
+<td style="text-align: left;">Token</td>
+<td style="text-align: left;">无状态认证令牌</td>
+<td style="text-align: left;">客户端</td>
+</tr>
+</tbody>
+</table>
+<p>\14. 上述三者有什么不同，分别在什么场景下使用</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">Cookie</th>
+<th style="text-align: left;">Session</th>
+<th style="text-align: left;">Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">存储位置</td>
+<td style="text-align: left;">客户端</td>
+<td style="text-align: left;">服务器</td>
+<td style="text-align: left;">客户端</td>
+</tr>
+<tr>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: left;">较低</td>
+<td style="text-align: left;">较高</td>
+<td style="text-align: left;">高</td>
+</tr>
+<tr>
+<td style="text-align: left;">状态管理</td>
+<td style="text-align: left;">有状态</td>
+<td style="text-align: left;">有状态</td>
+<td style="text-align: left;">无状态</td>
+</tr>
+<tr>
+<td style="text-align: left;">扩展性</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">差</td>
+<td style="text-align: left;">好</td>
+</tr>
+<tr>
+<td style="text-align: left;">跨域支持</td>
+<td style="text-align: left;">有限制</td>
+<td style="text-align: left;">有限制</td>
+<td style="text-align: left;">支持</td>
+</tr>
+<tr>
+<td style="text-align: left;">典型场景</td>
+<td style="text-align: left;">用户偏好设置</td>
+<td style="text-align: left;">传统Web应用</td>
+<td style="text-align: left;">前后端分离应用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用场景</strong>：</p>
+<ol>
+<li><strong>Cookie</strong>：记住登录状态、用户偏好设置</li>
+<li><strong>Session</strong>：传统Web应用（如电商购物车）</li>
+<li><strong>Token</strong>：</li>
+<li>API认证（JWT）</li>
+<li>移动应用</li>
+<li>单点登录(SSO)</li>
+<li>前后端分离架构</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2020 Martin Donath
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<2915597808@qq.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>

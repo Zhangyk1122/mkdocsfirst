@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../docker%20project/Prometheus%E7%9B%91%E6%8E%A7%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/">
+        <link rel="prev" href="../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/">
       
       
-        <link rel="next" href="../%E6%95%B0%E6%8D%AE%E5%BA%93/">
+        <link rel="next" href="../../%E4%B8%AD%E9%97%B4%E4%BB%B6/nginx/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>mysql8.0本地搭建 - 理想乡随手记</title>
+        <title>mysql练习 - 理想乡随手记</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mysql80" class="md-skip">
+        <a href="#mysql" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              mysql8.0本地搭建
+              mysql练习
             
           </span>
         </div>
@@ -368,7 +368,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
           
   
   
@@ -2289,19 +2289,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mysql8.0%20%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   
@@ -2312,7 +2303,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2322,10 +2312,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    mysql练习
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2336,6 +2346,195 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      mysql 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：创建数据库和表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-faker" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：插入测试数据 (使用 Python Faker)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础练习题目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础练习题目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 增删改查 (CRUD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-whereandor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 条件语句 (WHERE/AND/OR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-likeorder-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 模糊匹配和排序 (LIKE/ORDER BY)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 常用函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 多表连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.删除数据库然后重新恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习答案验证技巧
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-11g" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oracle 11g 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Oracle 11g 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、增删改查 (CRUD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereandor" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、条件语句 (WHERE/AND/OR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#likeorder-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、模糊匹配和排序 (LIKE/ORDER BY)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、常用函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、多表连接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2855,8 +3054,185 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      mysql 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一步：创建数据库和表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-faker" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二步：插入测试数据 (使用 Python Faker)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础练习题目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础练习题目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 增删改查 (CRUD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-whereandor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 条件语句 (WHERE/AND/OR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-likeorder-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 模糊匹配和排序 (LIKE/ORDER BY)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 常用函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 多表连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.删除数据库然后重新恢复
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习答案验证技巧
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-11g" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oracle 11g 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Oracle 11g 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、增删改查 (CRUD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereandor" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、条件语句 (WHERE/AND/OR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#likeorder-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、模糊匹配和排序 (LIKE/ORDER BY)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、常用函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、多表连接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2875,57 +3251,418 @@
   
 
 
-<h1 id="mysql80">mysql8.0 快速搭建</h1>
-<h1 id="mysql80_1">安装mysql8.0仓库</h1>
-<div class="codehilite"><pre><span></span><code>tee /etc/yum.repos.d/mysql-8.0.repo &lt;&lt;EOF
-[mysql80-community]
-name=MySQL 8.0 Community Server
-baseurl=https://repo.mysql.com/yum/mysql-8.0-community/el/9/x86_64/
-enabled=1
-gpgcheck=0
-EOF
+<h2 id="mysql">mysql 练习</h2>
+<h3 id="_1">第一步：创建数据库和表</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 创建数据库</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">practice_db</span><span class="w">     </span><span class="o">#</span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="err">表示没有数据库就创建有就忽略</span>
+<span class="w">  </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w">                       </span><span class="o">#</span><span class="err">设置字符集为</span><span class="n">utf8mb4</span>
+<span class="w">  </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span><span class="w">                 </span>
+<span class="n">USE</span><span class="w"> </span><span class="n">practice_db</span><span class="p">;</span>
+
+<span class="c1">-- 创建用户表</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">     </span><span class="o">#</span><span class="n">int整数类型</span><span class="err">，</span><span class="n">auto自动递增</span><span class="err">，</span><span class="n">key设置主键</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">              </span><span class="o">#</span><span class="n">varchar字符类型</span><span class="err">，最大</span><span class="mi">50</span><span class="err">个，</span><span class="k">not</span><span class="w"> </span><span class="n">null不能为空</span>
+<span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">join_date</span><span class="w"> </span><span class="nb">DATE</span><span class="w">                     </span><span class="o">#</span><span class="n">date注册时间</span><span class="err">，必填（格式</span><span class="w"> </span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="err">）</span>
+<span class="p">);</span>
+
+<span class="c1">-- 创建订单表</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">order_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<span class="w">    </span><span class="n">amount</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w">                 </span><span class="o">#</span><span class="err">数据类型，</span><span class="mi">10</span><span class="err">是最大位数，</span><span class="mi">2</span><span class="err">是允许</span><span class="mi">2</span><span class="err">个小数点</span>
+<span class="w">    </span><span class="n">order_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">                      </span><span class="o">#</span><span class="n">date订单日期</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="k">DESCRIBE</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span><span class="w">     </span><span class="o">#</span><span class="err">查看表所需填入的内容</span>
 </code></pre></div>
 
-<blockquote>
-<p>可以查看数据库的具体的版本</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>dnf search mysql-community-server --showduplicates | grep 8.0
+<h3 id="python-faker">第二步：插入测试数据 (使用 Python Faker)</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">faker</span><span class="w"> </span><span class="kn">import</span> <span class="n">Faker</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mysql.connector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">()</span>
+
+<span class="c1"># 连接数据库</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;admin123.&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;practice_db&quot;</span><span class="p">,</span>
+    <span class="n">auth_plugin</span><span class="o">=</span><span class="s1">&#39;mysql_native_password&#39;</span>
+<span class="p">)</span>
+
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># 插入用户数据</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">()</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="n">join_date</span> <span class="o">=</span> <span class="n">fake</span><span class="o">.</span><span class="n">date_between</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;-5y&#39;</span><span class="p">)</span>
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="s2">&quot;INSERT INTO users (name, email, age, join_date) VALUES (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">join_date</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已插入50个用户数据&quot;</span><span class="p">)</span>
+
+<span class="c1"># 插入订单数据</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT user_id FROM users&quot;</span><span class="p">)</span>
+<span class="n">user_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+
+<span class="n">products</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Laptop&#39;</span><span class="p">,</span> <span class="s1">&#39;Phone&#39;</span><span class="p">,</span> <span class="s1">&#39;Tablet&#39;</span><span class="p">,</span> <span class="s1">&#39;Headphones&#39;</span><span class="p">,</span> <span class="s1">&#39;Camera&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">user_ids</span><span class="p">)</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">products</span><span class="p">)</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">order_date</span> <span class="o">=</span> <span class="n">fake</span><span class="o">.</span><span class="n">date_between</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;-1y&#39;</span><span class="p">)</span>
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="s2">&quot;INSERT INTO orders (user_id, product, amount, order_date) VALUES (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">product</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">order_date</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已插入100个订单数据&quot;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
-<blockquote>
-<p>安装8.0版本</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>dnf install -y mysql-community-server-8.0.30-1.el9.x86_64
+<h3 id="_2">基础练习题目</h3>
+<h4 id="1-crud">1. 增删改查 (CRUD)</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 插入新用户</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">join_date</span><span class="p">)</span><span class="w"> </span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;zhangsan@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-05-01&#39;</span><span class="p">);</span>
+
+<span class="c1">-- 更新用户年龄</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">;</span>
+
+<span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 删除测试用户 (注意：实际工作慎用DELETE)</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test@example.com&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 查询所有用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
 </code></pre></div>
 
-<blockquote>
-<p>启动数据库</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>systemctl enable mysqld --now
+<h4 id="2-whereandor">2. 条件语句 (WHERE/AND/OR)</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 查找30岁以上的用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+
+<span class="c1">-- 查找手机或相机订单</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Phone&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Camera&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 查找2023年下半年的大额订单 (&gt;$1000)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">order_date</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;2023-07-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;2023-12-31&#39;</span>
+<span class="k">AND</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
 </code></pre></div>
 
-<blockquote>
-<p>过滤数据库初始root密码</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="n">grep</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">mysqld</span><span class="o">.</span><span class="n">log</span>
+<h4 id="3-likeorder-by">3. 模糊匹配和排序 (LIKE/ORDER BY)</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 查找名字包含&quot;李&quot;的用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%李%&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 查找Gmail邮箱用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%@gmail.com&#39;</span><span class="p">;</span>
+
+<span class="c1">-- 按年龄降序排列用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+<span class="o">#</span><span class="w"> </span><span class="err">从表中选择</span><span class="n">name和age字段</span><span class="err">，来自</span><span class="n">users表</span><span class="err">，选择</span><span class="n">age为关键字</span><span class="err">，</span><span class="n">DESC降序</span><span class="err">，</span><span class="n">ACE是升序</span><span class="err">，默认是升序</span>
+<span class="o">#</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">选择关键字</span>
+
+<span class="c1">-- 按订单金额从高到低排序</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
 
-<blockquote>
-<p>使用初始密码登录</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>mysql -u root -p&quot;9VZ&lt;oQcwi=qL&quot;
+<h4 id="4">4. 常用函数</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 统计用户总数</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_users</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+<span class="o">#</span><span class="w"> </span><span class="n">count统计</span><span class="err">，</span><span class="n">as给结果列表命名为total_users</span>
+
+<span class="c1">-- 计算平均订单金额</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_order_amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="p">;</span>
+
+<span class="c1">-- 找到最高订单金额</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_order</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="p">;</span>
+
+<span class="c1">-- 显示当前日期和时间</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">current_datetime</span><span class="p">;</span>
+
+<span class="c1">-- 统计每个产品的订单数量</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">product</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">order_count</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">product</span><span class="p">;</span>
+<span class="o">#</span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">表示分组，每个商品分成一个组</span>
 </code></pre></div>
 
-<blockquote>
-<p>修改数据库root密码</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">root</span><span class="s">@&quot;localhost&quot;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="s">&quot;Admin123...&quot;</span><span class="p">;</span>
+<h4 id="5">5. 多表连接</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 显示所有订单及对应的用户信息</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">order_id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">product</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">order_date</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">user_id</span><span class="p">;</span>
+<span class="o">#</span><span class="n">o指的是orders表</span><span class="err">，</span><span class="n">u是users</span><span class="p">,</span><span class="n">join表示把users的user_id和orders的user_id匹配</span><span class="err">，然后列出来</span>
+<span class="o">#</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="err">表名</span><span class="w">  </span><span class="k">on</span><span class="w">  </span><span class="err">在</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">中使用，用于指定两个表之间如何进行连接的条件</span>
+
+<span class="c1">-- 查找没有订单的用户</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+<span class="o">#</span><span class="k">LEFT</span><span class="w"> </span><span class="n">JOIN表示保留左表的内容</span><span class="err">，即</span><span class="n">users表</span>
+
+<span class="c1">-- 计算每个用户的总消费金额</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_spent</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">total_spent</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
 
-<blockquote>
-<p>退出数据库用新密码登录</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code>mysql -uroot -p&#39;Admin123...&#39;
+<table>
+<thead>
+<tr>
+<th>JOIN 类型</th>
+<th>描述</th>
+<th>是否常用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INNER JOIN</code></td>
+<td>只返回两边都匹配的记录</td>
+<td>✅ 高频</td>
+</tr>
+<tr>
+<td><code>LEFT JOIN</code></td>
+<td>返回左表所有记录，右表无匹配则为 NULL</td>
+<td>✅ 高频</td>
+</tr>
+<tr>
+<td><code>RIGHT JOIN</code></td>
+<td>返回右表所有记录，左表无匹配则为 NULL</td>
+<td>❌ 较少</td>
+</tr>
+<tr>
+<td><code>FULL JOIN</code></td>
+<td>返回两边所有记录，无匹配则为 NULL</td>
+<td>❌（MySQL 不支持）</td>
+</tr>
+<tr>
+<td><code>CROSS JOIN</code></td>
+<td>所有组合，笛卡尔积</td>
+<td>❌ 极少</td>
+</tr>
+<tr>
+<td><code>SELF JOIN</code></td>
+<td>同一张表内部连接</td>
+<td>✅ 特殊场景</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6">6.删除数据库然后重新恢复</h4>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="err">导出数据库的数据</span>
+<span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">database_name</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">backup</span><span class="p">.</span><span class="k">sql</span>
+<span class="o">#</span><span class="err">删除数据库</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">database_name</span><span class="p">;</span>
+<span class="o">#</span><span class="err">创建数据库</span>
+<span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">uroot</span><span class="w"> </span><span class="o">-</span><span class="n">padmin123</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s1">&#39;CREATE DATABASE practice_db CHARACTER SET utf8mb4;&#39;</span>
+<span class="o">#</span><span class="err">导入数据库数据</span>
+<span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">database_name</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">backup</span><span class="p">.</span><span class="k">sql</span>
+</code></pre></div>
+
+<h3 id="_3">练习答案验证技巧</h3>
+<ol>
+<li>
+<p>执行查询后检查返回的行数是否符合预期</p>
+</li>
+<li>
+<p>使用 <code>LIMIT 5</code> 查看部分结果样本</p>
+</li>
+<li>
+<p>验证计算结果的合理性：</p>
+</li>
+</ol>
+<p>```
+   -- 检查平均订单金额是否在合理范围
+   SELECT AVG(amount) FROM orders;</p>
+<p>-- 检查最高金额订单
+   SELECT * FROM orders ORDER BY amount DESC LIMIT 1;</p>
+<p>-- 验证连接查询
+   SELECT COUNT(*) FROM orders 
+   WHERE user_id NOT IN (SELECT user_id FROM users);
+   ```</p>
+<h1 id="oracle-11g">Oracle 11g 练习</h1>
+<p>这里使用docker 拉取镜像进行练习</p>
+<div class="codehilite"><pre><span></span><code><span class="n">docker</span><span class="w"> </span><span class="n">pull</span><span class="w"> </span><span class="n">wnameless</span><span class="o">/</span><span class="n">oracle</span><span class="o">-</span><span class="n">xe</span><span class="o">-</span><span class="mi">11</span><span class="n">g</span><span class="o">-</span><span class="n">r2</span>
+
+<span class="n">docker</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="err">\</span>
+<span class="w">  </span><span class="c1">--name oracle-11 \</span>
+<span class="w">  </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">1521</span><span class="err">:</span><span class="mi">1521</span><span class="w"> </span><span class="err">\</span>
+<span class="w">  </span><span class="n">wnameless</span><span class="o">/</span><span class="n">oracle</span><span class="o">-</span><span class="n">xe</span><span class="o">-</span><span class="mi">11</span><span class="n">g</span><span class="o">-</span><span class="n">r2</span>
+
+<span class="n">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="n">it</span><span class="w"> </span><span class="n">oralce</span><span class="w"> </span><span class="n">bash</span><span class="w">  </span><span class="n">#进入容器</span>
+<span class="n">sqlplus</span><span class="w"> </span><span class="k">system</span><span class="o">/</span><span class="n">oracle</span><span class="nv">@xe</span><span class="w">   </span><span class="n">#连接数据库</span>
+</code></pre></div>
+
+<p>镜像默认</p>
+<p>用户名：system  密码：oracle
+用户名：sys     密码：oracle（连接为SYSDBA）</p>
+<p>创建一个用户进行练习</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">test_user</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">password</span><span class="p">;</span><span class="w">   </span><span class="o">#</span><span class="err">创建用户</span>
+
+<span class="k">GRANT</span><span class="w"> </span><span class="k">CONNECT</span><span class="p">,</span><span class="w"> </span><span class="n">RESOURCE</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">test_user</span><span class="p">;</span><span class="w">            </span><span class="o">#</span><span class="err">授权</span>
+
+<span class="n">sqlplus</span><span class="w"> </span><span class="n">test_user</span><span class="o">/</span><span class="n">password</span><span class="o">@</span><span class="n">xe</span><span class="w">                   </span><span class="o">#</span><span class="err">登录</span>
+</code></pre></div>
+
+<p>插入数据进行练习</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- 员工数据</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;IT&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">&#39;2020-01-15&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">));</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;销售&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">6500</span><span class="p">,</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">&#39;2021-03-22&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">));</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;王五&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;IT&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9000</span><span class="p">,</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">&#39;2019-11-05&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">));</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;赵六&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5500</span><span class="p">,</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">&#39;2022-07-30&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">));</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;钱七&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;销售&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w"> </span><span class="n">TO_DATE</span><span class="p">(</span><span class="s1">&#39;2020-05-18&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">));</span>
+
+<span class="c1">-- 部门数据</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;IT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;北京&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;销售&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;上海&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;广州&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<h4 id="crud">一、增删改查 (CRUD)</h4>
+<ol>
+<li>插入新员工：刘八，财务部，工资6000，入职日期今天</li>
+</ol>
+<p><code>sql
+   INSERT INTO employees VALUES (7,'刘八','财务部',6000,TO_DATE('2027-07-04','YYYY-MM-DD'));</code></p>
+<ol>
+<li>将王五的工资更新为9500</li>
+</ol>
+<p><code>sql
+   UPDATE employees set salary=9500 where name = '王五';</code></p>
+<ol>
+<li>删除部门为HR的所有员工</li>
+</ol>
+<p><code>sql
+   DELETE FROM employees WHERE department = 'HR';</code></p>
+<ol>
+<li>查询所有员工信息</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees;</code></p>
+<h4 id="whereandor">二、条件语句 (WHERE/AND/OR)</h4>
+<ol>
+<li>查询工资大于7000的员工</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees where salary &gt; 7000;</code></p>
+<ol>
+<li>查询IT部门或工资低于6000的员工</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees WHERE department = 'IT' or  salary &lt; 6000;</code></p>
+<ol>
+<li>查询2020年后入职且工资在6000-8000之间的员工</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees WHERE hire_date &gt; TO_DATE('2020-01-01','YYYY-MM-DD')
+   AND salary BETWEEN 6000 AND 8000;</code></p>
+<h4 id="likeorder-by">三、模糊匹配和排序 (LIKE/ORDER BY)</h4>
+<ol>
+<li>查询姓名中包含"五"的员工（使用LIKE）</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees WHERE NAME LIKE  '%五%'</code></p>
+<ol>
+<li>查询所有员工，按工资降序排列</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees ORDER BY salary DESC;</code></p>
+<ol>
+<li>按部门升序、工资降序双排序</li>
+</ol>
+<p><code>sql
+   SELECT * FROM employees ORDER BY department ASC, salary DESC;</code></p>
+<h4 id="_4">四、常用函数</h4>
+<ol>
+<li>统计员工总数</li>
+</ol>
+<p><code>sql
+   SELECT COUNT(*) FROM employees;</code></p>
+<ol>
+<li>计算公司每月工资总额</li>
+</ol>
+<p><code>sql
+   SELECT SUM(salary) FROM employees;</code></p>
+<ol>
+<li>查询最高工资和最低工资</li>
+</ol>
+<p><code>sql
+   SELECT MAX(salary),MIN(salary) FROM employees;</code></p>
+<ol>
+<li>显示每个员工的工龄（年）</li>
+</ol>
+<p><code>sql
+   SELECT name, TRUNC(MONTHS_BETWEEN(SYSDATE, hire_date)/12) AS years 
+   FROM employees;</code></p>
+<ol>
+<li>查询当前日期和时间</li>
+</ol>
+<p><code>sql
+   SELECT SYSDATE FROM DUAL;</code></p>
+<h4 id="_5">五、多表连接</h4>
+<ol>
+<li>查询所有员工及其部门信息（INNER JOIN）</li>
+</ol>
+<p><code>SELECT e.*, d.location
+   FROM employees e
+   JOIN departments d 
+   ON e.department = d.dept_name;</code></p>
+<ol>
+<li>查询上海地区所有员工（使用部门表位置字段）</li>
+</ol>
+<p><code>sql
+   SELECT e.*
+   FROM employees e
+   JOIN DEPARTMENTS D on E.DEPARTMENT = d.dept_name
+   WHERE d.location = '上海';</code></p>
+<ol>
+<li>统计每个部门的平均工资（GROUP BY）</li>
+</ol>
+<p><code>sql
+   SELECT department, AVG(salary)
+   FROM EMPLOYEES e 
+   GROUP BY department;</code></p>
+<ol>
+<li>查询工资高于部门平均工资的员工</li>
+</ol>
+<p><code>sql
+   SELECT e.* 
+   FROM employees e 
+   JOIN (
+       SELECT department, AVG(salary) avg_sal 
+       FROM employees 
+       GROUP BY department
+   ) d ON e.department = d.department 
+   WHERE e.salary &gt; d.avg_sal;</code></p>
+<ol>
+<li>显示没有员工的部门（LEFT JOIN）</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>SELECT d.dept_name 
+FROM departments d 
+LEFT JOIN employees e ON d.dept_name = e.department 
+WHERE e.emp_id IS NULL;
 </code></pre></div>
 
 
